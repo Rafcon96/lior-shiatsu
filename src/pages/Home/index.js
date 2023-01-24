@@ -79,7 +79,7 @@ function Home() {
         <Grid item container spacing={2} justifyContent={"center"} >
           {
             res.actionButtons.map((btn,index)=>
-              <Grid item>
+              <Grid item key={index}>
                 <Button onClick={e=>{onBtnClick(btn.path)}} size='large' sx={{fontSize:'clamp(0.5rem, 2.5vw, 1rem)',width:'clamp(70px, 2.5vw, 100)'}} variant="contained">{btn.buttonTitle[Number(language)]}</Button>
               </Grid>
             )

@@ -14,11 +14,12 @@ import { Link } from 'react-router-dom';
 
 const pages = [
     {name:['בית','home'], link:"/"},
+    {name:["על עצמי","about"], link:"/about"},
     {name:['טיפולים',"treatments"], link:"/treatments"},
     {name:['מחירון',"prices"], link:"/prices"},
-    {name:["על עצמי","about"], link:"/about"},
-    {name:["זמינות","availability"], link:"/availability"},
-    {name:['המלצות',"recommendations"], link:"/recommendations"},
+    
+    // {name:["זמינות","availability"], link:"/availability"},
+    // {name:['המלצות',"recommendations"], link:"/recommendations"},
     ]
    
 
@@ -43,10 +44,6 @@ function ResponsiveAppBar() {
       <Container maxWidth="xl">
         <Toolbar   >
         <img src="/liorLogo2.png" style= {{ width: 100, height: 80}}/>
-        
-    
-        
-
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -59,7 +56,6 @@ function ResponsiveAppBar() {
               <MenuIcon fontSize='large' style={{color:'rgb(69,96,69)'}}/>
             </IconButton>
             <Menu
-              id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: 'bottom',
@@ -74,24 +70,23 @@ function ResponsiveAppBar() {
               onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: 'block', md: 'none' }
-               
               }}
-            >
-                
+            >   
               {pages.map((page, index) => (
                 <MenuItem key={index} onClick={handleCloseNavMenu}>
-                  <Link to={page.link} style={{textDecoration:"none",color:"rgb(199, 158, 22)",fontSize:"25px"}}>{page.name[Number(language)]}</Link>
+                  <Link to={page.link} style={{textDecoration:"none",color:"rgb(199, 158, 22)",fontSize:"25px"}}>
+                    {page.name[Number(language)]}
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
           
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex'},justifyContent:"space-evenly" }}>
-            
             {pages.reverse().map((page, index) => (
-             
-                  <Link key={index} style={{color:"rgb(199, 158, 22)",fontSize:"25px",textDecoration:"none",marginRight:20}} to={page.link} >{page.name[Number(language)]}</Link>
-             
+                  <Link key={index} style={{color:"rgb(199, 158, 22)",fontSize:"25px",textDecoration:"none",marginRight:20}} to={page.link} >
+                    {page.name[Number(language)]}
+                  </Link>
             ))}
           </Box>
           <Box sx={{width:120}}>

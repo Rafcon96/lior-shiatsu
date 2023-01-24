@@ -1,7 +1,9 @@
 import { Grid, Typography } from '@mui/material'
 import React from 'react'
+import { useLang } from '../../context/language.context'
 
 export default function HeaderBody({res}) {
+  const {language} = useLang()
   return (
     <Grid container direction={"column"}  style={{border:"2px solid red"}} >
         <Grid item container justifyContent={"center"}>
@@ -19,7 +21,7 @@ export default function HeaderBody({res}) {
                     textDecoration: 'none',
                     }}
                 >
-                   {res.title}
+                   {res.title[Number(language)]}
                 </Typography>
           </Grid>
           <Grid item container justifyContent={"center"}>
@@ -36,7 +38,7 @@ export default function HeaderBody({res}) {
                 textDecoration: 'none',
                 }}
             >
-                {res.body}
+                {res.body[Number(language)]}
             </Typography>
           </Grid>
     </Grid>

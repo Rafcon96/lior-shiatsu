@@ -1,13 +1,22 @@
 import { Grid, Typography } from '@mui/material'
 import React from 'react'
+import { useLang } from '../../context/language.context'
 
-export default function  nTitleBodyImg({res}) {
-    
+export default function TitleBodyImg({res , height = 250}) {
+    const {language} = useLang()
+    const styles = res.imgPath ? 
+            { order: { xs: 2, md: res.imgLeft ? 1 : 2 }, height}
+            :
+            {backgroundImage:`url(${res.img})`, order: { xs: 2, md: res.imgLeft ? 1 : 2 },
+                backgroundPosition:"center", backgroundRepeat:"no-repeat", opacity:0.8, height,backgroundAttachment:{xs:'fixed',md:'local'}
+            }
+
   return (
-    <Grid container >
- 
-           
-        <Grid item xs={12} md={5} sx={{backgroundImage:`url(${res.img})`, order: { xs: 2, md: res.imgLeft ? 1 : 2 }, backgroundPosition:"center", backgroundRepeat:"no-repeat", opacity:0.8, height:250 }}>
+    <Grid container > 
+        <Grid item xs={12} md={5} sx={styles}>
+            <Grid item container justifyContent={'center'}>
+                {res?.imgPath ? <img src={res.imgPath} alt={res.title[Number(language)]} style={{height,width:"80%",borderRadius:res?.borderRadius}} /> : null}
+            </Grid>
         </Grid>
         <Grid item container xs={12} md={7} sx={{order: { xs: 1, md: res.imgLeft ? 2 : 1 } }}>
             <Grid item container justifyContent={"center"}>
@@ -25,7 +34,7 @@ export default function  nTitleBodyImg({res}) {
                     textDecoration: 'none',
                     }}
                 >
-                    {res.title}
+                    {res.title[Number(language)]}
                 </Typography>
             </Grid>
             <Grid item container justifyContent={"center"}>
@@ -42,7 +51,7 @@ export default function  nTitleBodyImg({res}) {
                     textDecoration: 'none',
                     }}
                 >
-                    {res.body}
+                    {res.body[Number(language)]}
                 </Typography>
             </Grid>
         </Grid>           

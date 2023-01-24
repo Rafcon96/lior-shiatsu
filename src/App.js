@@ -28,9 +28,7 @@ import { LanguageProvider } from "./context/language.context";
 
 
 function App() {
-//   const [language, setLanguage] = useState(HEBROW);
-//   const languageToggle = () => setLanguage(prev=>!prev)
-console.log("appLODING")
+
   return (
     <Router>
 		<div style={{height:"calc(100vh - 16px)",display:"grid", padding:0}}>

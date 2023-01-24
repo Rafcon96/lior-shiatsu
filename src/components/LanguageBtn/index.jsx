@@ -9,7 +9,6 @@ const res = [
 
 export default function LanguageBtn() {
     const {language, toggleLanguage} = useLang()
-    console.log(language)
     return (
     <Button onClick={toggleLanguage}  startIcon={<img src={res[Number(language)].img} style={{width:20,height:"20px"}} alt={res[Number(language)].title} />}>{res[Number(language)].title}</Button>
   )
