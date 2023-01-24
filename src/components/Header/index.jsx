@@ -42,7 +42,7 @@ function ResponsiveAppBar() {
       }}>
       <Container maxWidth="xl">
         <Toolbar   >
-        <img src="/liorLogo3.png" style= {{ width: 100, height: 80}}/>
+        <img src="/liorLogo2.png" style= {{ width: 100, height: 80}}/>
         
     
         
