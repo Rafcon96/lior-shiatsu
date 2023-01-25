@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/lior-shiatsu/static/css/main.b9bc39da.css",
-    "main.js": "/lior-shiatsu/static/js/main.f837ec19.js",
+    "main.js": "/lior-shiatsu/static/js/main.ab2356c8.js",
     "index.html": "/lior-shiatsu/index.html",
     "main.b9bc39da.css.map": "/lior-shiatsu/static/css/main.b9bc39da.css.map",
-    "main.f837ec19.js.map": "/lior-shiatsu/static/js/main.f837ec19.js.map"
+    "main.ab2356c8.js.map": "/lior-shiatsu/static/js/main.ab2356c8.js.map"
   },
   "entrypoints": [
     "static/css/main.b9bc39da.css",
-    "static/js/main.f837ec19.js"
+    "static/js/main.ab2356c8.js"
   ]
 }
