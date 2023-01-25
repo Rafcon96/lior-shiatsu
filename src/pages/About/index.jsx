@@ -15,7 +15,7 @@ const content = [
             ]
     }   
      ,{title: ["למי מיועד הטיפול","Who is the treatment for"],
-        img:"./lior1.png",
+        img:"/lior1.png",
         imgLeft:true,
         body:[`הטיפול מתאים לכל גבר ואשה בכל תקופות חייהם
             טיפול הוא הדרך המושלמת להפגת מתחים בחיי היום יום. 

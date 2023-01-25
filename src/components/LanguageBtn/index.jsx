@@ -3,8 +3,8 @@ import React from 'react'
 import { useLang } from '../../context/language.context'
 
 const res = [
-    {img:'./english.png',title:"ENGLISH"},
-    {img:'./hebrow.png',title:"עברית"}
+    {img:'/english.png',title:"ENGLISH"},
+    {img:'/hebrow.png',title:"עברית"}
 ]
 
 export default function LanguageBtn() {
