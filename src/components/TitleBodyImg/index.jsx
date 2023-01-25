@@ -7,7 +7,7 @@ export default function TitleBodyImg({res , height = 250}) {
     const styles = res.imgPath ? 
             { order: { xs: 2, md: res.imgLeft ? 1 : 2 }, height}
             :
-            {backgroundImage:`url(${res.img})`, order: { xs: 2, md: res.imgLeft ? 1 : 2 },
+            {backgroundImage:`url(${process.env.PUBLIC_URL}${res.img})`, order: { xs: 2, md: res.imgLeft ? 1 : 2 },
                 backgroundPosition:"center", backgroundRepeat:"no-repeat", opacity:0.8, height
             }
 
