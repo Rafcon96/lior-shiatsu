@@ -10,6 +10,6 @@ const res = [
 export default function LanguageBtn() {
     const {language, toggleLanguage} = useLang()
     return (
-    <Button onClick={toggleLanguage}  startIcon={<img src={res[Number(language)].img} style={{width:20,height:"20px"}} alt={res[Number(language)].title} />}>{res[Number(language)].title}</Button>
+    <Button onClick={toggleLanguage}  startIcon={<img src={`${process.env.PUBLIC_URL}${res[Number(language)].img}`} style={{width:20,height:"20px"}} alt={res[Number(language)].title} />}>{res[Number(language)].title}</Button>
   )
 }

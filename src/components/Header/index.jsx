@@ -43,7 +43,7 @@ function ResponsiveAppBar() {
       }}>
       <Container maxWidth="xl">
         <Toolbar   >
-        <img src="/liorLogo2.png" style= {{ width: 100, height: 80}}/>
+        <img src={`${process.env.PUBLIC_URL}/liorLogo2.png`} alt="liorLogo" style={{ width: 100, height: 80}}/>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"

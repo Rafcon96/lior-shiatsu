@@ -52,7 +52,7 @@ function Home() {
     <Grid container direction={'row'} sx={{backgroundImage:'url(./bgHome.jpg)',paddingBottom:7}}>
       <Grid item direction={'column'} container xs={12} sm={6} justifyContent={'center'}>
         <Grid item container justifyContent={'center'} sx={{paddingTop:"20px"}}>
-          <img src={'./liorLogo2.png'} style={{width:"50%",borderRadius:'50%',boxShadow: '3px 3px red, -1em 0 .4em olive'}}/>
+          <img src={`${process.env.PUBLIC_URL}/liorLogo2.png`} style={{width:"50%",borderRadius:'50%',boxShadow: '3px 3px red, -1em 0 .4em olive'}}/>
         </Grid>
       <Grid item >
         <Typography
@@ -87,7 +87,7 @@ function Home() {
       </Grid>
       </Grid>
       <Grid item container sm={6} xs={12} justifyContent={'center'}  style={{order:0}}>
-        <img src={'./liorHome.png'} style={{width:"95%",borderRadius:'10%',height:'clamp(80%, 1vh, 90%)',marginTop:20}}/>  
+        <img src={`${process.env.PUBLIC_URL}/liorHome.png`} style={{width:"95%",borderRadius:'10%',height:'clamp(80%, 1vh, 90%)',marginTop:20}}/>  
       </Grid>
       
       
