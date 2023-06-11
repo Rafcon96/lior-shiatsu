@@ -12,20 +12,20 @@ export default function TitleBodyImg({res , height = 250}) {
             }
 
   return (
-    <Grid container > 
-        <Grid item xs={12} md={5} sx={styles}>
-            <Grid item container justifyContent={'center'}>
+    <Grid container spacing={2}> 
+        <Grid item xs={12} md={6} sx={styles} spacing={2}>
+            <Grid item container justifyContent={'center'} >
                 {res?.imgPath ? <img src={process.env.PUBLIC_URL + res.imgPath} alt={res.title[Number(language)]} style={{height,width:"80%",borderRadius:res?.borderRadius}} /> : null}
             </Grid>
         </Grid>
-        <Grid item container xs={12} md={7} sx={{order: { xs: 1, md: res.imgLeft ? 2 : 1 } }}>
+        <Grid item container xs={12} md={6} sx={{order: { xs: 1, md: res.imgLeft ? 2 : 1 } }}>
             <Grid item container justifyContent={"center"}>
                 <Typography
                     variant="h4"
                     align={'center'}
                     alignContent={'center'}
                     sx={{
-                    m: 2,
+                    m: 1,
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
                     fontWeight: 700,
@@ -43,7 +43,8 @@ export default function TitleBodyImg({res , height = 250}) {
                     variant="h6"
                     align={'center'}
                     sx={{
-                    mr: 2,
+                        whiteSpace:"pre-line",
+                    mr: 1,
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
                     fontWeight: 700,

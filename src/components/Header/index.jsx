@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
 
 const pages = [
     {name:['בית','home'], link:"/"},
-    {name:["על עצמי","about"], link:"/about"},
+    {name:["על הטיפול","about"], link:"/about"},
     {name:['טיפולים',"treatments"], link:"/treatments"},
     {name:['מחירון',"prices"], link:"/prices"},
     
@@ -91,6 +91,7 @@ function ResponsiveAppBar() {
           </Box>
           <Box sx={{width:120}}>
       <LanguageBtn />
+      052-8356836
         </Box>
           
         </Toolbar>

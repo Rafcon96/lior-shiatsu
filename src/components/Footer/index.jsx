@@ -49,7 +49,7 @@ export default function Footer() {
                         textAlign:'center'
                         }}
                     >
-                        ליצירת קשר
+                        ליצירת קשר נייד 052-8356836
                     </Typography>
             </Grid>
             </Grid>
