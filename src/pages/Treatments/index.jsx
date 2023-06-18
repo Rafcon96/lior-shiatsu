@@ -91,6 +91,7 @@ export default function Treatments() {
     console.log("res[0].body1[Number(language)]",res[0].body3[Number(language)])
   return (
     <Grid container spacing={1}>
+        <Grid item container>
         <Grid item container justifyContent={"center"}>
                 <Typography
                     variant="h4"
@@ -127,7 +128,7 @@ export default function Treatments() {
                     m: 1,
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
-                    fontWeight: 400,
+                    fontWeight: 600,
                     letterSpacing: '.2rem',
                     color: 'inherit',
                     textDecoration: 'none',
@@ -147,7 +148,7 @@ export default function Treatments() {
                     m: 1,
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
-                    fontWeight: 400,
+                    fontWeight: 600,
                     letterSpacing: '.2rem',
                     color: 'inherit',
                     textDecoration: 'none',
@@ -167,7 +168,7 @@ export default function Treatments() {
                     m: 1,
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
-                    fontWeight: 400,
+                    fontWeight: 600,
                     letterSpacing: '.2rem',
                     color: 'inherit',
                     textDecoration: 'none',
@@ -177,6 +178,8 @@ export default function Treatments() {
                    {res?.[0].body3[Number(language)]}
                 </Typography>
             </Grid>
+            </Grid>
+            <Grid item container>
              <Grid item container justifyContent={"center"}>
                 <Typography
                     variant="h4"
@@ -213,7 +216,7 @@ export default function Treatments() {
                     m: 1,
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
-                    fontWeight: 400,
+                    fontWeight: 600,
                     letterSpacing: '.2rem',
                     color: 'inherit',
                     textDecoration: 'none',
@@ -233,7 +236,7 @@ export default function Treatments() {
                     m: 1,
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
-                    fontWeight: 400,
+                    fontWeight: 600,
                     letterSpacing: '.2rem',
                     color: 'inherit',
                     textDecoration: 'none',
@@ -253,7 +256,7 @@ export default function Treatments() {
                     m: 1,
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
-                    fontWeight: 400,
+                    fontWeight: 600,
                     letterSpacing: '.2rem',
                     color: 'inherit',
                     textDecoration: 'none',
@@ -263,6 +266,8 @@ export default function Treatments() {
                    {res?.[1].body3[Number(language)]}
                 </Typography>
             </Grid>
+            </Grid>
+            <Grid item container>
             <Grid item container justifyContent={"center"}>
                 <Typography
                     variant="h4"
@@ -299,7 +304,7 @@ export default function Treatments() {
                     m: 1,
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
-                    fontWeight: 400,
+                    fontWeight: 600,
                     letterSpacing: '.2rem',
                     color: 'inherit',
                     textDecoration: 'none',
@@ -319,7 +324,7 @@ export default function Treatments() {
                     m: 1,
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
-                    fontWeight: 400,
+                    fontWeight: 600,
                     letterSpacing: '.2rem',
                     color: 'inherit',
                     textDecoration: 'none',
@@ -339,7 +344,7 @@ export default function Treatments() {
                     m: 1,
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
-                    fontWeight: 400,
+                    fontWeight: 600,
                     letterSpacing: '.2rem',
                     color: 'inherit',
                     textDecoration: 'none',
@@ -348,6 +353,7 @@ export default function Treatments() {
                 >
                    {res?.[2].body3[Number(language)]}
                 </Typography>
+            </Grid>
             </Grid>
         </Grid>
     
