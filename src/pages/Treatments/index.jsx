@@ -129,7 +129,7 @@ export default function Treatments() {
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
                     fontWeight: 600,
-                    letterSpacing: '.2rem',
+                  
                     color: 'inherit',
                     textDecoration: 'none',
                     fontSize:'clamp(1rem, 4.5vw, 2rem)'
@@ -149,7 +149,7 @@ export default function Treatments() {
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
                     fontWeight: 600,
-                    letterSpacing: '.2rem',
+                   
                     color: 'inherit',
                     textDecoration: 'none',
                     fontSize:'clamp(1.2rem, 4.5vw, 1.5rem)'
@@ -169,7 +169,7 @@ export default function Treatments() {
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
                     fontWeight: 600,
-                    letterSpacing: '.2rem',
+                   
                     color: 'inherit',
                     textDecoration: 'none',
                     fontSize:'clamp(1.2rem, 4.5vw, 1.5rem)'
@@ -190,7 +190,7 @@ export default function Treatments() {
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
                     fontWeight: 700,
-                    letterSpacing: '.2rem',
+                    
                     color: 'inherit',
                     textDecoration: 'none',
                     fontSize:'clamp(1.9rem, 4.5vw, 4rem)'
@@ -217,7 +217,7 @@ export default function Treatments() {
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
                     fontWeight: 600,
-                    letterSpacing: '.2rem',
+                    
                     color: 'inherit',
                     textDecoration: 'none',
                     fontSize:'clamp(1rem, 4.5vw, 2rem)'
@@ -237,7 +237,7 @@ export default function Treatments() {
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
                     fontWeight: 600,
-                    letterSpacing: '.2rem',
+                    
                     color: 'inherit',
                     textDecoration: 'none',
                     fontSize:'clamp(1.2rem, 4.5vw, 1.5rem)'
@@ -257,7 +257,7 @@ export default function Treatments() {
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
                     fontWeight: 600,
-                    letterSpacing: '.2rem',
+                    
                     color: 'inherit',
                     textDecoration: 'none',
                     fontSize:'clamp(1.2rem, 4.5vw, 1.5rem)'
@@ -278,7 +278,6 @@ export default function Treatments() {
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
                     fontWeight: 700,
-                    letterSpacing: '.2rem',
                     color: 'inherit',
                     textDecoration: 'none',
                     fontSize:'clamp(1.9rem, 4.5vw, 4rem)'
@@ -305,7 +304,6 @@ export default function Treatments() {
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
                     fontWeight: 600,
-                    letterSpacing: '.2rem',
                     color: 'inherit',
                     textDecoration: 'none',
                     fontSize:'clamp(1rem, 4.5vw, 2rem)'
@@ -325,7 +323,6 @@ export default function Treatments() {
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
                     fontWeight: 600,
-                    letterSpacing: '.2rem',
                     color: 'inherit',
                     textDecoration: 'none',
                     fontSize:'clamp(1.2rem, 4.5vw, 1.5rem)'
@@ -345,7 +342,6 @@ export default function Treatments() {
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
                     fontWeight: 600,
-                    letterSpacing: '.2rem',
                     color: 'inherit',
                     textDecoration: 'none',
                     fontSize:'clamp(1.2rem, 4.5vw, 1.5rem)'

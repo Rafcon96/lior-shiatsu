@@ -13,10 +13,10 @@ import { useLang } from '../../context/language.context';
 import { Link } from 'react-router-dom';
 
 const pages = [
-    {name:['בית','home'], link:"/"},
-    {name:["על הטיפול","about"], link:"/about"},
-    {name:['טיפולים',"treatments"], link:"/treatments"},
-    {name:['מחירון',"prices"], link:"/prices"},
+    {name:['בית','home'], link:"/lior-shiatsu"},
+    {name:["על הטיפול","about"], link:"lior-shiatsu/about"},
+    {name:['טיפולים',"treatments"], link:"lior-shiatsu/treatments"},
+    {name:['מחירון',"prices"], link:"lior-shiatsu/prices"},
     
     // {name:["זמינות","availability"], link:"/availability"},
     // {name:['המלצות',"recommendations"], link:"/recommendations"},

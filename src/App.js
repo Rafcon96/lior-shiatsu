@@ -32,11 +32,10 @@ function App() {
         <LanguageProvider>
           <Layout>
             <Routes>
-            <Route path="/lior-shiatsu" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/treatments" element={<Treatments />} />
-              <Route path="/prices" element={<Prices />} />
-              <Route path="/" element={<Home />} />
+            <Route path="lior-shiatsu/" element={<Home />} />
+              <Route path="lior-shiatsu/about" element={<About />} />
+              <Route path="lior-shiatsu/treatments" element={<Treatments />} />
+              <Route path="lior-shiatsu/prices" element={<Prices />} />
               
             </Routes>
           </Layout>
