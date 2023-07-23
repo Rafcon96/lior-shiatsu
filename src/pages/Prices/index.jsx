@@ -20,7 +20,7 @@ export default function Prices() {
   const {language} = useLang()
   const row = (res) => {
     return (
-      <Grid container justifyContent={"center"}  >
+      <Grid container justifyContent={"center"}  dir='ltr'>
         <Grid xs={6} item sx={{order: language ? 1 : 3,}}>
           <Typography
               variant="h6"
