@@ -6,7 +6,7 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Prices from "./pages/Prices";
 import { LanguageProvider } from "./context/language.context";
-import Shiatsu from "./pages/shiatsu";
+import Shiatsu from "./pages/Shiatsu"
 import Acupuncture from "./pages/Acupuncture";
 import CuppingTherapy from "./pages/CuppingTherapy";
 // import {HEBROW, LanguageContext} from './utils/language'
