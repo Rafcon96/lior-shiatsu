@@ -5,10 +5,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Grid } from '@mui/material';
 
 export default function MediaCard({imgPath, title, body, linkPath}) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, display:"grid" }}>
       <CardMedia
         sx={{ minHeight: "220px"}}
         image={process.env.PUBLIC_URL + imgPath}
@@ -18,13 +19,15 @@ export default function MediaCard({imgPath, title, body, linkPath}) {
         <Typography gutterBottom variant="h5" component="div">
           {title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.secondary" sx={{textAlign:'right'}}>
           {body}
         </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions  >
+        <Grid container alignItems={'flex-end'} justifyContent={'flex-end'}>
         
         <Button variant='outlined' href={linkPath} size="small">קרא עוד...</Button>
+        </Grid>
       </CardActions>
     </Card>
   );
