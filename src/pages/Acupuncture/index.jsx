@@ -12,10 +12,10 @@ export default function Acupuncture({height = 250}) {
     //         }
 
   return (
-    <Grid container spacing={2}> 
-        <Grid item xs={12} md={6} spacing={2}>
+    <Grid container spacing={2} sx={{px:3}} dir='rtl'> 
+        <Grid item xs={12} md={6} >
             <Grid item container justifyContent={'center'} >
-                { <img src={process.env.PUBLIC_URL + "/car3.jpg"} alt={'דיקור img'} style={{height,width:"80%",borderRadius:'5px'}} /> }
+                { <img src={process.env.PUBLIC_URL + "/car3.jpg"} alt={'דיקור img'} style={{height,width:"90%",borderRadius:'5px'}} /> }
             </Grid>
         </Grid>
         <Grid item container xs={12} md={6} >
@@ -84,7 +84,7 @@ export default function Acupuncture({height = 250}) {
                  הפחתה בחומרת תסמיני דמנציה וסקולרית, ושיפור תסמיני נזלת אלרגית באף. 
                 מתוך: 2022 Department of Medicine, Faculty of Health Sciences, McMaster University, Canada,
                 </Typography>
-                <a href='https://www.bmj.com/content/376/bmj-2021-067475'>לינק למאמר המלא*</a>
+                <a href='https://www.bmj.com/content/376/bmj-2021-067475'>לינק למאמר המלא</a>
             </Grid>
            
             

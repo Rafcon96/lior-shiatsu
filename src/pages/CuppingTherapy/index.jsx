@@ -12,8 +12,8 @@ export default function CuppingTherapy({height = 250}) {
     //         }
 
   return (
-    <Grid container spacing={2}> 
-        <Grid item xs={12} md={6} spacing={2}>
+    <Grid container spacing={2} sx={{px:5}}> 
+        <Grid item xs={12} md={6} >
             <Grid item container justifyContent={'center'} >
                 { <img src={process.env.PUBLIC_URL + "/car2.jpg"} alt={'כוסות רוח img'} style={{height,width:"80%",borderRadius:'5px'}} /> }
             </Grid>
@@ -44,7 +44,7 @@ export default function CuppingTherapy({height = 250}) {
                     align={'center'}
                     sx={{
                         whiteSpace:"pre-line",
-                    mr: 1,
+             
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
                     fontWeight: 700,
@@ -67,7 +67,7 @@ export default function CuppingTherapy({height = 250}) {
                     align={'center'}
                     sx={{
                         whiteSpace:"pre-line",
-                    mr: 1,
+                    
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
                     fontWeight: 700,
@@ -94,7 +94,7 @@ export default function CuppingTherapy({height = 250}) {
                     align={'center'}
                     sx={{
                         whiteSpace:"pre-line",
-                    mr: 1,
+    
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
                     fontWeight: 700,
