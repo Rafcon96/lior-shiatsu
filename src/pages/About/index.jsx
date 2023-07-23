@@ -70,7 +70,7 @@ const content = [
 export default function About() {
     const {language} = useLang()
   return (
-    <Grid container>
+    <Grid container dir="rtl">
         <Grid item container sx={{marginBottom:5}}>
             <HeaderBody res={res} />
         </Grid>
@@ -103,7 +103,7 @@ export default function About() {
             <Grid container item lg={4} xs={12} justifyContent={'center'}><Card 
                 imgPath={'/lior1.png'} 
                 title={"שיאצו"} 
-                linkPath={"/lior-shiatsu/treatments/shiatsu"}
+                linkPath={"/lior-shiatsu/shiatsu"}
                 body={`
                 שיאצוּ (ביפנית: 指圧 "שי" משמעו- אצבע, ו"אצו"- לחץ) היא שיטת טיפול במגע בתחום הרפואה המשלימה. מקורה ביפן, שם היא טיפול רפואי מורשה. 
         היכולה לסייע בבעיות אורתופדיות בעמוד השדרה, בעיות פנימיות בתחומי נוירולוגיה, בעיות עיכול, גינקולוגיה, בעיות רגשיות כמו הפרעות שינה, מתח, דיכאון ועוד.`}
@@ -111,7 +111,7 @@ export default function About() {
              <Grid item lg={4} xs={12} container justifyContent={'center'}><Card 
                 imgPath={'/car3.jpg'} 
                 title={"דיקור"} 
-                linkPath={"/lior-shiatsu/treatments/Acupuncture"}
+                linkPath={"/lior-shiatsu/acupuncture"}
                 body={`למה אנחנו דוקרים,  ואיך זה עובד ? 
                 ישנן המון השערות ומחקרים רבים שנעשו ונעשים כל הזמן, אך התעלומה טרם נפתרה.
                 ההסבר המדעי כיום מציע שהמחט גורמת לגירוי רפלקסים של מערכת העצבים 
@@ -121,7 +121,7 @@ export default function About() {
              <Grid item lg={4} xs={12} container justifyContent={'center'}><Card 
                 imgPath={'/car2.jpg'} 
                 title={"כוסות רוח"} 
-                linkPath={"/lior-shiatsu/treatments/CuppingTherapy"}
+                linkPath={"/lior-shiatsu/cuppingTherapy"}
                 body={`אז מה זה, בעצם, כוסות רוח? מטפלים בשיטה זו מניחים על גוף המטופל כוסות זכוכית או חימר ויוצרים בתוכן ואקום מקומי. בשל הוואקום העור נמשך פנימה אל הכוס, נימי הדם נשברים – וכך נוצרים אותם עיגולים אופייניים.`}
              /></Grid>
         </Grid>    

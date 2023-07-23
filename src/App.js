@@ -38,9 +38,9 @@ function App() {
             <Route path="lior-shiatsu/" element={<Home />} />
               <Route path="lior-shiatsu/about" element={<About />} />
               <Route path="lior-shiatsu/treatments" element={<Treatments />} />
-              <Route path="lior-shiatsu/treatments/shiatsu" element={<Shiatsu />} />
-              <Route path="lior-shiatsu/treatments/acupuncture" element={<Acupuncture />} />
-              <Route path="lior-shiatsu/treatments/cuppingTherapy" element={<CuppingTherapy />} />
+              <Route path="lior-shiatsu/shiatsu" element={<Shiatsu />} />
+              <Route path="lior-shiatsu/acupuncture" element={<Acupuncture />} />
+              <Route path="lior-shiatsu/cuppingTherapy" element={<CuppingTherapy />} />
               <Route path="lior-shiatsu/prices" element={<Prices />} />
               
             </Routes>

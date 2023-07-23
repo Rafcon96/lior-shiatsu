@@ -10,7 +10,7 @@ export default function Layout({children}) {
     
             <Header />
         {/* <div style={{ backgroundImage:"url(/bg3.png)", backgroundSize:"cover"}}> */}
-        <div >
+        <div dir="rtl">
             {/* <img className='bg' src={"/bg3.png"}/>
             <div className='content'> */}
             

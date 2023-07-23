@@ -24,7 +24,7 @@ export default function MediaCard({imgPath, title, body, linkPath}) {
         </Typography>
       </CardContent>
       <CardActions  >
-        <Grid container alignItems={'flex-end'} justifyContent={'flex-end'}>
+        <Grid container alignItems={'flex-end'} >
         
         <Button variant='outlined' href={linkPath} size="small">קרא עוד...</Button>
         </Grid>

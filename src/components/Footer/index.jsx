@@ -8,6 +8,7 @@ import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import GoogleMap from '../GoogleMap';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const style = {
     position: 'absolute',
@@ -30,6 +31,7 @@ export default function Footer() {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    const isMobile = useMediaQuery('(max-width:1200px)')
     
     return (
         <Grid container alignItems={"center"} justifyContent={"center"} style={{ background: 'rgba(235, 158, 52,0.7)', height:100,marginTop:8}}>
@@ -49,18 +51,19 @@ export default function Footer() {
                         textAlign:'center'
                         }}
                     >
-                        ליצירת קשר נייד 052-8356836
+                        ליצירת קשר 052-8356836
                     </Typography>
             </Grid>
             </Grid>
             <Grid item container spacing={6} justifyContent={"center"}>
+                {!!isMobile &&
             <Grid item>
                 
             <a href="https://api.whatsapp.com/send?phone=972528356836" >                
                     <WhatsAppIcon fontSize={"large"} style={{color:"white"}}/>
                     
                 </a>
-            </Grid>
+            </Grid>}
             <Grid item>
             <a href="https://www.facebook.com/lior0007" >
                 <FacebookIcon fontSize={"large"} style={{color:"white"}}/>

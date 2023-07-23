@@ -5,7 +5,7 @@ import { useLang } from '../../context/language.context'
 const res = {
     title: ["מחירון לשעת טיפול", "price for hour of treatment"],
     header:{title:["טיפול", "treatment"],price1:["מחיר רגיל","Reguler Price"],
-    price2:["מחיר לאחר הנחה","discount Price"]}
+    price2:["מחיר","discount Price"]}
 
     
 }
