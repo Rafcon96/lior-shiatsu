@@ -6,6 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Grid } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 export default function MediaCard({imgPath, title, body, linkPath}) {
   return (
@@ -26,7 +27,7 @@ export default function MediaCard({imgPath, title, body, linkPath}) {
       <CardActions  >
         <Grid container alignItems={'flex-end'} >
         
-        <Button variant='outlined' href={linkPath} size="small">קרא עוד...</Button>
+        <Button variant='outlined' href={linkPath} size="small"><Link to={linkPath}>קרא עוד...</Link></Button>
         </Grid>
       </CardActions>
     </Card>
