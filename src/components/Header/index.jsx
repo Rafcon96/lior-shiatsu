@@ -13,10 +13,12 @@ import { useLang } from '../../context/language.context';
 import { Link } from 'react-router-dom';
 
 const pages = [
-    {name:['בית','home'], link:"/lior-shiatsu"},
-    {name:["על הטיפול","about"], link:"lior-shiatsu/about"},
-    {name:['טיפולים',"treatments"], link:"lior-shiatsu/treatments"},
+    
+    // {name:['טיפולים',"treatments"], link:"lior-shiatsu/treatments"},
     {name:['מחירון',"prices"], link:"lior-shiatsu/prices"},
+    {name:["על הטיפול","about"], link:"lior-shiatsu/about"},
+    {name:['בית','home'], link:"/lior-shiatsu"},
+
     
     // {name:["זמינות","availability"], link:"/availability"},
     // {name:['המלצות',"recommendations"], link:"/recommendations"},
@@ -39,11 +41,12 @@ function ResponsiveAppBar() {
   return (
     <AppBar position="sticky" sx={{ 
         background:"rgba(268,293,333,1)",
+        width:"98vw",
         height: 80
       }}>
-      <Container maxWidth="xl">
+      
         <Toolbar   >
-        <img src={`${process.env.PUBLIC_URL}/liorLogo2.png`} alt="liorLogo" style={{ width: 100, height: 80}}/>
+        <img src={`${process.env.PUBLIC_URL}/liorLogo2.png`} alt="liorLogo" style={{ maxWidth: 100, height: 80}}/>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -84,18 +87,18 @@ function ResponsiveAppBar() {
           
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex'},justifyContent:"space-evenly" }}>
             {pages.reverse().map((page, index) => (
-                  <Link key={index} style={{color:"rgb(199, 158, 22)",fontSize:"25px",textDecoration:"none",marginRight:20}} to={page.link} >
+                  <Link key={index} style={{color:"rgb(199, 158, 22)",fontSize:"25px",textDecoration:"none"}} to={page.link} >
                     {page.name[Number(language)]}
                   </Link>
             ))}
           </Box>
-          <Box sx={{width:120}}>
+          {/* <Box sx={{width:120}}>
       <LanguageBtn />
-      052-8356836
-        </Box>
+    
+        </Box> */}
           
         </Toolbar>
-      </Container>
+  
     </AppBar>
   );
 }

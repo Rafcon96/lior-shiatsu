@@ -3,6 +3,7 @@ import React from 'react'
 import HeaderBody from '../../components/HeaderBody'
 import TitleBodyImg from '../../components/TitleBodyImg'
 import { useLang } from '../../context/language.context'
+import Card from '../../components/Card'
 
 const res = {
     header:[": סוגי טיפולים שאני מציע","type of tretment i offer:"],
@@ -80,7 +81,51 @@ export default function About() {
                 return <Grid key={index + item.title} container  sx={{marginBottom:10}}  item xs={12}><TitleBodyImg height={450} res={item}  /></Grid>
             })
         } 
-        </Grid>      
+        </Grid>  
+        <Grid item container justifyContent={"center"}>
+                <Typography
+                    variant="h4"
+                    align={'center'}
+                    alignContent={'center'}
+                    sx={{
+                    m: 2,
+                    display:  'flex' ,
+                    fontFamily: 'Amatic SC',
+                    fontWeight: 700,
+                    letterSpacing: '.2rem',
+                    color: 'inherit',
+                    textDecoration: 'none',
+                    }}
+                >
+                   טיפולים שאני מציע:
+                </Typography>
+          </Grid>
+        <Grid container justifyContent={'center'} spacing={2}>
+            <Grid container item lg={4} xs={12} justifyContent={'center'}><Card 
+                imgPath={'/lior1.png'} 
+                title={"שיאצו"} 
+                linkPath={"/lior-shiatsu/treatments/shiatsu"}
+                body={`
+                שיאצוּ (ביפנית: 指圧 "שי" משמעו- אצבע, ו"אצו"- לחץ) היא שיטת טיפול במגע בתחום הרפואה המשלימה. מקורה ביפן, שם היא טיפול רפואי מורשה. 
+        היכולה לסייע בבעיות אורתופדיות בעמוד השדרה, בעיות פנימיות בתחומי נוירולוגיה, בעיות עיכול, גינקולוגיה, בעיות רגשיות כמו הפרעות שינה, מתח, דיכאון ועוד.`}
+             /></Grid>
+             <Grid item lg={4} xs={12} container justifyContent={'center'}><Card 
+                imgPath={'/car3.jpg'} 
+                title={"דיקור"} 
+                linkPath={"/lior-shiatsu/treatments/Acupuncture"}
+                body={`
+                שיאצוּ (ביפנית: 指圧 "שי" משמעו- אצבע, ו"אצו"- לחץ) היא שיטת טיפול במגע בתחום הרפואה המשלימה. מקורה ביפן, שם היא טיפול רפואי מורשה. 
+        היכולה לסייע בבעיות אורתופדיות בעמוד השדרה, בעיות פנימיות בתחומי נוירולוגיה, בעיות עיכול, גינקולוגיה, בעיות רגשיות כמו הפרעות שינה, מתח, דיכאון ועוד.`}
+             /></Grid>
+             <Grid item lg={4} xs={12} container justifyContent={'center'}><Card 
+                imgPath={'/car2.jpg'} 
+                title={"כוסות רוח"} 
+                linkPath={"/lior-shiatsu/treatments/shiatsu"}
+                body={`
+                שיאצוּ (ביפנית: 指圧 "שי" משמעו- אצבע, ו"אצו"- לחץ) היא שיטת טיפול במגע בתחום הרפואה המשלימה. מקורה ביפן, שם היא טיפול רפואי מורשה. 
+        היכולה לסייע בבעיות אורתופדיות בעמוד השדרה, בעיות פנימיות בתחומי נוירולוגיה, בעיות עיכול, גינקולוגיה, בעיות רגשיות כמו הפרעות שינה, מתח, דיכאון ועוד.`}
+             /></Grid>
+        </Grid>    
     </Grid>
   )
 }

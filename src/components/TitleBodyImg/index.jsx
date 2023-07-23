@@ -13,7 +13,7 @@ export default function TitleBodyImg({res , height = 250}) {
 
   return (
     <Grid container spacing={2}> 
-        <Grid item xs={12} md={6} sx={styles} spacing={2}>
+        <Grid item xs={12} md={6} sx={styles} >
             <Grid item container justifyContent={'center'} >
                 {res?.imgPath ? <img src={process.env.PUBLIC_URL + res.imgPath} alt={res.title[Number(language)]} style={{height,width:"80%",borderRadius:res?.borderRadius}} /> : null}
             </Grid>
@@ -32,7 +32,7 @@ export default function TitleBodyImg({res , height = 250}) {
                     letterSpacing: '.2rem',
                     color: 'inherit',
                     textDecoration: 'none',
-                    fontSize:'clamp(1.9rem, 4.5vw, 4rem)'
+                    fontSize:'clamp(1.2rem, 2.5vw, 2.8rem)'
                     }}
                 >
                     {res.title[Number(language)]}
