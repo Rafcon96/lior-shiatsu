@@ -71,7 +71,7 @@ export default function About() {
     const {language} = useLang()
   return (
     <Grid container dir="rtl">
-        <Grid item container sx={{marginBottom:5}}>
+        <Grid item container sx={{marginBottom:5, pr:1}}>
             <HeaderBody res={res} />
         </Grid>
         <Grid item container >
