@@ -29,7 +29,7 @@ export default function Prices() {
               alignContent={'center'}
               justifyContent={'center'}
               sx={{
-                m: 2,
+                p:2,
                 display:  'flex' ,
                 
                 fontFamily: 'Amatic SC',
@@ -71,7 +71,7 @@ export default function Prices() {
               alignContent={'center'}
               justifyContent={'center'}
               sx={{
-                m: 2,
+                p: 2,
                 display:  'flex' ,
                 
                 fontFamily: 'Amatic SC',
@@ -98,7 +98,7 @@ export default function Prices() {
             alignContent={'center'}
             justifyContent={'center'}
             sx={{
-            m: 2,
+            p: 2,
             display:  'flex' ,
             fontFamily: 'Amatic SC',
             fontWeight: 700,
@@ -110,7 +110,7 @@ export default function Prices() {
             {res.title[Number(language)]}
           </Typography>
       </Grid>
-      <Grid container sx={{order:1, marginTop:{xs:-40,lg:-20}}} >
+      <Grid container sx={{order:1, marginTop:{xs:-30,lg:-20}}} >
         <Grid xs={6} item sx={{order: language ? 0 : 2,}}>
           <Typography
               variant="h6"

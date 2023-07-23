@@ -2,7 +2,7 @@ import { Grid, Typography } from '@mui/material'
 import React from 'react'
 import { useLang } from '../../context/language.context'
 
-export default function Shiatsu({height = 250}) {
+export default function Shiatsu({height = 400}) {
     const {language} = useLang()
     // const styles = res.imgPath ? 
     //         { order: { xs: 2, md: res.imgLeft ? 1 : 2 }, height}
