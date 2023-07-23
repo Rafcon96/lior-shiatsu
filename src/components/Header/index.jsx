@@ -47,7 +47,7 @@ function ResponsiveAppBar() {
       
         <Toolbar   >
         <img src={`${process.env.PUBLIC_URL}/liorLogo2.png`} alt="liorLogo" style={{ maxWidth: 100, height: 80}}/>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }} dir='rtl'>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -85,7 +85,7 @@ function ResponsiveAppBar() {
             </Menu>
           </Box>
           
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex'},justifyContent:"space-evenly" }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex'},justifyContent:"space-evenly" }} dir='rtl'>
             {pages.reverse().map((page, index) => (
                   <Link key={index} style={{color:"rgb(199, 158, 22)",fontSize:"25px",textDecoration:"none"}} to={page.link} >
                     {page.name[Number(language)]}

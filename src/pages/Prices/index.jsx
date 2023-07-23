@@ -89,7 +89,7 @@ export default function Prices() {
   }
 
   return (
-    <Grid container justifyContent={'center'} sx={{minHeight:'100vh'}}> 
+    <Grid container justifyContent={'center'} sx={{minHeight:'100vh'}} dir='ltr'> 
       <Grid item container justifyContent={'center'} sx={{maxHeight:100}}>
       <Typography
             variant="h2"
