@@ -10,9 +10,9 @@ const res = {
     
 }
 const itemRes = [
-  {title:["שיאצו", "Shiatsu"],price1:300,price2:300},
-  {title:["שיאצו ודיקור", "shiatsu & acupuncture"],price1:280,price2:250},
-  {title:["עיסוי / עיסוי משולב","massage / massage with other"],price1:300,price2:280},
+  {title:["שיאצו", "Shiatsu"],price1:300,price2:280},
+  {title:["שיאצו ודיקור", "shiatsu & acupuncture"],price1:280,price2:300},
+  {title:["עיסוי / עיסוי משולב","massage / massage with other"],price1:300,price2:320},
   {title:["טיפול עד הבית", "house treatment"],price1:400,price2:380},
 ]
 
