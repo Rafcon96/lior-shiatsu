@@ -10,18 +10,18 @@ const res = {
     
 }
 const itemRes = [
-  {title:["שיאצו", "Shiatsu"],price1:300,price2:280},
-  {title:["שיאצו ודיקור", "shiatsu & acupuncture"],price1:280,price2:300},
-  {title:["עיסוי / עיסוי משולב","massage / massage with other"],price1:300,price2:320},
-  {title:["טיפול עד הבית", "house treatment"],price1:400,price2:380},
+  {title:["שיאצו ודיקור /שיאצו", "Shiatsu"],price1:300,price2:280},
+  // {title:["שיאצו ודיקור", "shiatsu & acupuncture"],price1:300,price2:280},
+  {title:["עיסוי / עיסוי משולב","massage / massage with other"],price1:350,price2:300},
+  {title:["טיפול עד הבית", "house treatment"],price1:400,price2:330},
 ]
 
 export default function Prices() {
   const {language} = useLang()
   const row = (res) => {
     return (
-      <Grid container justifyContent={"center"}  dir='ltr'>
-        <Grid xs={6} item sx={{order: language ? 1 : 3,}}>
+      <Grid container justifyContent={"center"} alignItems={"flex-start"} sx={{maxHeight:"100px"}}  dir='ltr'>
+        <Grid xs={4} item sx={{order: language ? 1 : 3,}} >
           <Typography
               variant="h6"
               align={'center'}
@@ -36,13 +36,13 @@ export default function Prices() {
                 fontWeight: 700,
                 color: 'inherit',
                 textDecoration: 'none',
-                fontSize:'clamp(1.8rem, 2.5vw, 2rem)'
+                fontSize:'clamp(1rem, 2.5vw, 2rem)'
               }}
           >
               {res.title[Number(language)]}
           </Typography>
         </Grid>
-        {/* <Grid xs={4} item sx={{order: 2,}}>
+        <Grid xs={4} item sx={{order: 2,}}>
           <Typography
               variant="h6"
               align={'center'}
@@ -62,8 +62,8 @@ export default function Prices() {
           >
               {res.price1}
             </Typography>
-        </Grid> */}
-        <Grid xs={6} item sx={{order: language ? 3 : 1,}}>
+        </Grid>
+        <Grid xs={4} item sx={{order: language ? 3 : 1,}}>
           <Typography
               variant="h6"
               align={'center'}
@@ -78,7 +78,7 @@ export default function Prices() {
                 fontWeight: 700,
                 color: 'inherit',
                 textDecoration: 'none',
-                fontSize:'clamp(1.8rem, 2.5vw, 2rem)'
+                fontSize:'clamp(1rem, 2.5vw, 2rem)'
               }}
           >
               {res.price2}
@@ -89,8 +89,9 @@ export default function Prices() {
   }
 
   return (
-    <Grid container justifyContent={'center'} sx={{minHeight:'100vh'}} dir='ltr'> 
-      <Grid item container justifyContent={'center'} sx={{maxHeight:100}}>
+    <Grid container justifyContent={'center'}  dir='ltr' minHeight={"100vh"}> 
+    <Grid container>
+      <Grid item container justifyContent={'center'} alignItems={"center"} sx={{maxHeight:100}}>
       <Typography
             variant="h2"
             align={'center'}
@@ -104,14 +105,14 @@ export default function Prices() {
             fontWeight: 700,
             color: 'inherit',
             textDecoration: 'none',
-            fontSize:'clamp(2.4rem, 4.5vw, 4rem)'
-            }}
+            fontSize:'clamp(2rem, 2.5vw, 2.5rem)'
+          }}
         >
             {res.title[Number(language)]}
           </Typography>
       </Grid>
-      <Grid container sx={{order:1, marginTop:{xs:-30,lg:-20}}} >
-        <Grid xs={6} item sx={{order: language ? 0 : 2,}}>
+      <Grid container sx={{ }} >
+        <Grid xs={4} item sx={{order: language ? 0 : 2,}}>
           <Typography
               variant="h6"
               align={'center'}
@@ -126,13 +127,13 @@ export default function Prices() {
               
               color: 'inherit',
               textDecoration: 'none',
-              fontSize:'clamp(2rem, 2.5vw, 2rem)'
-              }}
+              fontSize:'clamp(1rem, 2.5vw, 2rem)'
+            }}
           >
               {res.header.title[Number(language)]}
           </Typography>
         </Grid>
-        {/* <Grid xs={4} item sx={{order: 1,}}>
+        <Grid xs={4} item sx={{order: 1,}}>
           <Typography
               variant="h6"
               align={'center'}
@@ -152,8 +153,8 @@ export default function Prices() {
           >
               {res.header.price1[Number(language)]}
             </Typography>
-        </Grid> */}
-        <Grid xs={6} item sx={{order: language ? 2 : 0,}}>
+        </Grid>
+        <Grid xs={4} item sx={{order: language ? 2 : 0,}}>
           <Typography
               variant="h6"
               align={'center'}
@@ -167,19 +168,29 @@ export default function Prices() {
               fontWeight: 700,
               color: 'inherit',
               textDecoration: 'none',
-              fontSize:'clamp(2rem, 2.5vw, 2rem)'
-              }}
+              fontSize:'clamp(1rem, 2.5vw, 2rem)'
+            }}
           >
               {res.header.price2[Number(language)]}
             </Typography>
         </Grid>
+        </Grid>
         <Grid container sx={{borderBottom:"1px solid black",order:2,maxHeight:"2px"}} justifyContent={'center'}></Grid>
+        </Grid>
+        <Grid container>
         {
-          itemRes.map((item, index)=><Grid container justifyContent={'center'}  order={index + 3} key={index}>
+          
+          itemRes.map((item, index)=><Grid container justifyContent={'center'} sx={{maxHeight:100}}  order={index + 3} key={index}>
               {row(item)}
             </Grid>)
         }
-      </Grid>
+        </Grid>
+        <Grid container justifyContent={"flex-end"} sx={{padding:5}}>
+          <Grid container justifyContent={"flex-end"}>בעקבות המצב *</Grid>
+        <Grid container justifyContent={"flex-end"}>לתושבי העוטף ונפגעי נובה </Grid>
+<Grid>הטיפול ללא עלות, או כראות עינכם</Grid>
+        </Grid>
+     
     </Grid>
   )
 }

@@ -87,7 +87,7 @@ function Home() {
       </Grid>
       </Grid>
       <Grid item container sm={6} xs={12} justifyContent={'center'}  style={{order:0}}>
-        <img src={`${process.env.PUBLIC_URL}/liorHome.png`} style={{width:"95%",borderRadius:'10%',height:'clamp(80%, 1vh, 90%)',marginTop:20}}/>  
+        <img src={`${process.env.PUBLIC_URL}/liorHome.jpeg`} style={{width:"95%",borderRadius:'10%',height:'clamp(80%, 1vh, 90%)',marginTop:20}}/>  
       </Grid>
       
       

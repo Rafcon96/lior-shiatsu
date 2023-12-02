@@ -34,7 +34,7 @@ export default function Footer() {
     const isMobile = useMediaQuery('(max-width:1200px)')
     
     return (
-        <Grid container alignItems={"center"} justifyContent={"center"} style={{ background: 'rgba(235, 158, 52,0.7)', height:100,marginTop:8}}>
+        <Grid container justifyContent={"center"} style={{ background: 'rgba(235, 158, 52,0.7)', height:100,marginTop:8}}>
             <Grid item container style={{color:"white"}} justifyContent={"center"}>
                 <Grid item>
                     <Typography
@@ -69,21 +69,21 @@ export default function Footer() {
                 <FacebookIcon fontSize={"large"} style={{color:"white"}}/>
             </a>
             </Grid>
-            <Grid item>
+            {/* <Grid item>
             
             <a href="mailto:lior0007@gmail.com" >
                 <EmailIcon fontSize={"large"} style={{color:"white"}}/>
             </a>
                 
-            </Grid>
+            </Grid> */}
             <Grid item>
             <a href="tel:+972528356836">
                 <PhoneIcon fontSize={"large"} style={{color:"white"}}/>
             </a>
             </Grid>
-                <Grid item>
+                {/* <Grid item>
                         <LocationOnIcon onClick={handleOpen} fontSize={"large"} style={{color:"white", cursor: "pointer"}}/>
-                </Grid>
+                </Grid> */}
             </Grid>
                 {<Modal
                     open={open}
