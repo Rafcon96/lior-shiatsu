@@ -15,9 +15,9 @@ import { Link } from 'react-router-dom';
 const pages = [
     
     // {name:['טיפולים',"treatments"], link:"lior-shiatsu/treatments"},
-    {name:['מחירון',"prices"], link:"lior-shiatsu/prices"},
-    {name:["על הטיפול","about"], link:"lior-shiatsu/about"},
-    {name:['בית','home'], link:"/lior-shiatsu"},
+    {name:['מחירון',"prices"], link:"/prices"},
+    {name:["על הטיפול","about"], link:"/about"},
+    {name:['בית','home'], link:"/"},
 
     
     // {name:["זמינות","availability"], link:"/availability"},

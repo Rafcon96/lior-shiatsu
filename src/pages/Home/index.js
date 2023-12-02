@@ -30,9 +30,9 @@ const res = {
     Over the years I have collected many tools to produce the best and personalized treatment experience for each patient that combines an understanding of the Western and Eastern worlds of medicine`
   ],
   actionButtons:[
-    {buttonTitle:[`על הטיפול`,`About`],path:'../lior-shiatsu/About'},
-    // {buttonTitle:[`טיפולים`,`treatments`],path:'../lior-shiatsu/treatments'},
-    {buttonTitle:[`מחירון`,`prices`],path:'../lior-shiatsu/prices'},
+    {buttonTitle:[`על הטיפול`,`About`],path:'../About'},
+    // {buttonTitle:[`טיפולים`,`treatments`],path:'../treatments'},
+    {buttonTitle:[`מחירון`,`prices`],path:'../prices'},
     // {buttonTitle:[`צור קשר`,`contact`],path:'lior-shiatsu/contact'},
   ]
 }

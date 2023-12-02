@@ -37,11 +37,13 @@ function App() {
             <Routes>
             <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              {/* <Route path="lior-shiatsu/treatments" element={<Treatments />} /> */}
+              <Route path="/lior-shiatsu" element={<Home />} />
               <Route path="/shiatsu" element={<Shiatsu />} />
               <Route path="/acupuncture" element={<Acupuncture />} />
               <Route path="/cuppingTherapy" element={<CuppingTherapy />} />
               <Route path="/prices" element={<Prices />} />
+              <Route path="https://www.lior-shahar.com" element={<Home />} />
+              {/* <Redirect to='/' /> */}
               
             </Routes>
           </Layout>
