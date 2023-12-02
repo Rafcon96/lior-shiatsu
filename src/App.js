@@ -35,13 +35,13 @@ function App() {
         <LanguageProvider>
           <Layout>
             <Routes>
-            <Route path="lior-shiatsu/" element={<Home />} />
-              <Route path="lior-shiatsu/about" element={<About />} />
+            <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
               {/* <Route path="lior-shiatsu/treatments" element={<Treatments />} /> */}
-              <Route path="lior-shiatsu/shiatsu" element={<Shiatsu />} />
-              <Route path="lior-shiatsu/acupuncture" element={<Acupuncture />} />
-              <Route path="lior-shiatsu/cuppingTherapy" element={<CuppingTherapy />} />
-              <Route path="lior-shiatsu/prices" element={<Prices />} />
+              <Route path="/shiatsu" element={<Shiatsu />} />
+              <Route path="/acupuncture" element={<Acupuncture />} />
+              <Route path="/cuppingTherapy" element={<CuppingTherapy />} />
+              <Route path="/prices" element={<Prices />} />
               
             </Routes>
           </Layout>
