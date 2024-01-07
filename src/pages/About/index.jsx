@@ -77,7 +77,7 @@ export default function About() {
         <Grid item container >
         {
             content.map((item, index)=>{
-                return <Grid key={index + item.title} container  sx={{marginBottom:10}}  item xs={12}><TitleBodyImg height={450} res={item}  /></Grid>
+                return <Grid key={index + item.title} container  sx={{marginBottom:{xs:3,lg:9}}}  item xs={12}><TitleBodyImg height={450} res={item}  /></Grid>
             })
         } 
         </Grid>  
@@ -87,7 +87,7 @@ export default function About() {
                     align={'center'}
                     alignContent={'center'}
                     sx={{
-                    m: 2,
+                    p: 2,
                     display:  'flex' ,
                     fontFamily: 'Amatic SC',
                     fontWeight: 700,
