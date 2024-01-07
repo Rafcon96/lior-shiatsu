@@ -48,7 +48,7 @@ function Home() {
   const onBtnClick = (path) => {navigate(path)}
 
   return (
-    <Grid container direction={'row'} sx={{backgroundImage:`url(${process.env.PUBLIC_URL}/bgHome.jpg)`,paddingBottom:7}} dir="rtl">
+    <Grid container direction={'row'} sx={{backgroundImage:`url(${process.env.PUBLIC_URL}/home-background.jpg)`,paddingBottom:7}} dir="rtl">
       <Grid item direction={'column'} container xs={12} sm={6} justifyContent={'center'}>
         <Grid item container justifyContent={'center'} sx={{paddingTop:"20px"}}>
           <img src={`${process.env.PUBLIC_URL}/liorLogo2.png`} style={{width:"50%",borderRadius:'50%',boxShadow: '3px 3px red, -1em 0 .4em olive'}}/>
@@ -68,7 +68,7 @@ function Home() {
             display:  'flex',
             fontFamily: 'Amatic SC',
             fontWeight: 700,
-            color: 'white',
+            color: 'black',
             textDecoration: 'none',
             fontSize:'clamp(1rem, 2vw, 1.6rem)'
           }}
@@ -90,7 +90,7 @@ function Home() {
         <img src={`${process.env.PUBLIC_URL}/liorHome.jpeg`} style={{width:"95%",borderRadius:'10%',height:'clamp(80%, 1vh, 90%)',marginTop:20}}/>  
       </Grid>
       
-      
+
             
       
     </Grid>

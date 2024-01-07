@@ -15,7 +15,7 @@ export default function Acupuncture({height = 350}) {
     <Grid container spacing={2} sx={{px:3}} dir='rtl'> 
         <Grid item xs={12} md={6} >
             <Grid item container justifyContent={'center'} >
-                { <img src={process.env.PUBLIC_URL + "/car3.jpg"} alt={'דיקור img'} style={{height,width:"90%",borderRadius:'5px'}} /> }
+                { <img src={process.env.PUBLIC_URL + "/dickor1.jpg"} alt={'דיקור img'} style={{height,width:"90%",borderRadius:'5px'}} /> }
             </Grid>
         </Grid>
         <Grid item container xs={12} md={6} >

@@ -18,7 +18,7 @@ export default function Shiatsu({height = 400}) {
                 { <img src={process.env.PUBLIC_URL + "/lior1.png"} alt={'shiatsu img'} style={{height,width:"80%",borderRadius:'5px'}} /> }
             </Grid>
         </Grid>
-        <Grid item container xs={12} md={6} sx={{background:"url(./liorIcon.png)",backgroundPosition:"center", backgroundRepeat:"no-repeat",color:'rgba(199, 222, 22,1)'}}>
+        <Grid item container xs={12} md={6}>
             <Grid item container justifyContent={"center"}>
                 <Typography
                     variant="h4"

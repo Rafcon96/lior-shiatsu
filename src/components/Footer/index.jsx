@@ -35,25 +35,26 @@ export default function Footer() {
     
     return (
         <Grid container justifyContent={"center"} style={{ background: 'rgba(235, 158, 52,0.7)', height:100,marginTop:8}}>
-            <Grid item container style={{color:"white"}} justifyContent={"center"}>
-                <Grid item>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="span"
-                        sx={{
-                        mr: 2,
-                        fontFamily: 'monospace',
-                        fontWeight: 700,
-                        letterSpacing: '.2rem',
-                        color: 'white',
-                        textDecoration: 'none',
-                        textAlign:'center'
-                        }}
-                    >
+            <Grid item  style={{color:"white"}} >
+            {/* <Grid item container justifyContent={"center"}> */}
+                  <Typography
+         
+          sx={{
+            // m:3,
+            wordSpacing: "0.2rem",
+            // lineHeight:1.6,
+            display:  'flex',
+            fontFamily: 'Amatic SC',
+            fontWeight: 700,
+            color: 'white',
+            textDecoration: 'none',
+            letterSpacing:"1.2px",
+            fontSize:'clamp(1.2rem, 2vw, 1.6rem)'
+          }}
+          >
                         ליצירת קשר 052-8356836
                     </Typography>
-            </Grid>
+            {/* </Grid> */}
             </Grid>
             <Grid item container spacing={6} justifyContent={"center"}>
                 {!!isMobile &&
