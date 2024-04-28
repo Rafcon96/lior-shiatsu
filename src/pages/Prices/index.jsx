@@ -13,7 +13,7 @@ const itemRes = [
   {title:["שיאצו ודיקור /שיאצו", "Shiatsu"],price1:300,price2:280},
   // {title:["שיאצו ודיקור", "shiatsu & acupuncture"],price1:300,price2:280},
   {title:["עיסוי / עיסוי משולב","massage / massage with other"],price1:350,price2:300},
-  {title:["טיפול עד הבית", "house treatment"],price1:400,price2:330},
+  {title:["טיפול עד הבית", "house treatment"],price1:400,price2:350},
 ]
 
 export default function Prices() {
