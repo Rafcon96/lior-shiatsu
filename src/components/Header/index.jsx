@@ -18,7 +18,7 @@ const pages = [
     {name:['מחירון',"prices"], link:"/prices"},
     {name:["על הטיפול","about"], link:"/about"},
     {name:['בית','home'], link:"/"},
-{name:["ביקורות מטופלים","testimonial"],link:"/testimonial"}
+// {name:["ביקורות מטופלים","testimonial"],link:"/testimonial"}
 
     
     // {name:["זמינות","availability"], link:"/availability"},
