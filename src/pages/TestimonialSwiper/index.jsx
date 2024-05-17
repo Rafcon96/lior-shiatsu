@@ -14,6 +14,7 @@ import { Pagination, Autoplay } from "swiper/modules";
 import Testimonial from "../../components/Testimonial";
 import Container from "@mui/material/Container";
 import { Typography, useMediaQuery, Grid, Box } from "@mui/material";
+import Cube from "../../components/Cube";
 
 export default function TestimonialSwiper() {
   const isMobileView = useMediaQuery("(max-width:1200px)");
@@ -40,7 +41,7 @@ export default function TestimonialSwiper() {
       >
         ביקורות ממטופלים מגוגל
       </Typography>
-      <Typography
+      {/* <Typography
         variant="h2"
         align={"center"}
         textAlign={"center"}
@@ -60,14 +61,15 @@ export default function TestimonialSwiper() {
         }}
       >
         מוזמנים לבוא לטיפול או סידרת טיפולים במחיר מוזל
-      </Typography>
-      <Box sx={{ maxWidth: isMobileView ? 350 : "100%", margin: "0 auto" }}>
-        <Swiper
+      </Typography> */}
+      <Grid container   sx={{ maxWidth: isMobileView ? 350 : "100%", margin: "0 auto" }}>
+       {isMobileView ? <Cube />  : <Swiper
           // effect={"coverflow"}
           grabCursor={true}
-          centeredSlides={true}
-          slidesPerView={isMobileView ? 1 : 3}
-          spaceBetween={30}
+          // centeredSlides={true}
+          slidesPerView={3}
+          spaceBetween={5}
+          speed={4500}
           // coverflowEffect={{
           //   rotate: 50,
           //   stretch: 0,
@@ -75,9 +77,10 @@ export default function TestimonialSwiper() {
           //   modifier: 1,
           //   // slideShadows: true,
           // }}
+          
           pagination={true}
           autoplay={{
-            delay: 2500,
+            delay: 4000,
             disableOnInteraction: false,
           }}
           modules={[Pagination, Autoplay]}
@@ -162,8 +165,8 @@ export default function TestimonialSwiper() {
               avatar={"א.ר"}
             />
           </SwiperSlide>
-        </Swiper>
-      </Box>
+        </Swiper>}
+      </Grid>
     </Container>
   );
 }

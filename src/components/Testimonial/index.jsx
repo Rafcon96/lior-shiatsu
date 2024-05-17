@@ -11,13 +11,14 @@ import { IconButton } from "@mui/material";
 const Testimonial = ({ name, testimonial, avatar, rating = 5 }) => {
   return (
     <Card
-      sx={{ maxWidth: 500 }}
+      sx={{ maxWidth: 375 }}
       style={{
         // display: "flex",
         // justifyContent: "center",
         // alignItems: "center",
         height: "100%",
         boxShadow: "0 0 10px 0 rgba(0,0,0,0.5)",
+        px:5
       }}
     >
       <CardContent>
