@@ -15,10 +15,11 @@ import { Link } from 'react-router-dom';
 const pages = [
     
     // {name:['טיפולים',"treatments"], link:"lior-shiatsu/treatments"},
+    {name:["ביקורות מטופלים","tsestimonial"],link:"/testimonial"},
     {name:['מחירון',"prices"], link:"/prices"},
     {name:["על הטיפול","about"], link:"/about"},
     {name:['בית','home'], link:"/"},
-{name:["ביקורות מטופלים","tsestimonial"],link:"/testimonial"}
+
 
     
     // {name:["זמינות","availability"], link:"/availability"},
