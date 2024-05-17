@@ -77,7 +77,7 @@ export default function TestimonialSwiper() {
           //   modifier: 1,
           //   // slideShadows: true,
           // }}
-          
+          loop={true}
           pagination={true}
           autoplay={{
             delay: 4000,

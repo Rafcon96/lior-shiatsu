@@ -21,6 +21,7 @@ export default function Cube() {
         effect={'cube'}
         grabCursor={true}
         slidesPerView={1}
+        loop={true}
         cubeEffect={{
           shadow: true,
           slideShadows: true,
