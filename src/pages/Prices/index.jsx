@@ -1,7 +1,7 @@
 import { Grid, Typography } from "@mui/material";
 import React from "react";
 import { useLang } from "../../context/language.context";
-import Testimonial from "../../components/Testimonial";
+// import Testimonial from "../../components/Testimonial";
 
 const res = {
   title: ["מחירון לשעת טיפול", "price for hour of treatment"],
@@ -212,7 +212,7 @@ export default function Prices() {
           </Grid>
         ))}
       </Grid>
-      <Grid container justifyContent={"flex-end"} sx={{ padding: 5 }}>
+      {/* <Grid container justifyContent={"flex-end"} sx={{ padding: 5 }}>
         <Grid container justifyContent={"flex-end"}>
           בעקבות המצב *
         </Grid>
@@ -220,7 +220,7 @@ export default function Prices() {
           לתושבי העוטף ונפגעי נובה{" "}
         </Grid>
         <Grid>הטיפול ללא עלות, או כראות עינכם</Grid>
-      </Grid>
+      </Grid> */}
     </Grid>
   );
 }

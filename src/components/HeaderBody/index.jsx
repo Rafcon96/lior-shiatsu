@@ -14,7 +14,7 @@ export default function HeaderBody({res}) {
                     sx={{
                     m: 2,
                     display:  'flex' ,
-                    fontFamily: 'Amatic SC',
+                    // fontFamily: 'Amatic SC',
                     fontWeight: 700,
                     letterSpacing: '.2rem',
                     color: 'inherit',
@@ -26,13 +26,13 @@ export default function HeaderBody({res}) {
           </Grid>
           <Grid item container justifyContent={"center"}>
             <Typography
-                variant="h6"
+                // variant="h6"
                 align={'right'}
                 sx={{
                   whiteSpace:"pre-line",
                 mr: 2,
                 display:  'flex' ,
-                fontFamily: 'Amatic SC',
+                // fontFamily: 'Amatic SC',
                 fontWeight: 700,
                 
                 color: 'inherit',
@@ -44,12 +44,12 @@ export default function HeaderBody({res}) {
           </Grid>
           <Grid item container justifyContent={"center"} sx={{marginTop:2}}>
             <Typography
-                variant="h6"
+                // variant="h6"
                 align={'right'}
                 sx={{
                 mr: 2,
                 display:  'flex' ,
-                fontFamily: 'Amatic SC',
+                // fontFamily: 'Amatic SC',
                 fontWeight: 700,
                 
                 color: 'inherit',

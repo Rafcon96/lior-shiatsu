@@ -18,7 +18,7 @@ export default function TitleBodyImg({res , height = 250}) {
                 {res?.imgPath ? <img src={process.env.PUBLIC_URL + res.imgPath} alt={res.title[Number(language)]} style={{height,width:"80%",borderRadius:res?.borderRadius}} /> : null}
             </Grid>
         </Grid>
-        <Grid item container xs={12} md={6} sx={{order: { xs: 1, md: res.imgLeft ? 2 : 1 } }}>
+        <Grid item container xs={12} md={6} sx={{order: { xs: 1, md: res.imgLeft ? 2 : 1 } }} alignContent={"start"}>
             <Grid item container justifyContent={"center"}>
                 <Typography
                     variant="h4"
@@ -27,12 +27,12 @@ export default function TitleBodyImg({res , height = 250}) {
                     sx={{
                     m: 1,
                     display:  'flex' ,
-                    fontFamily: 'Amatic SC',
+                    // fontFamily: 'Amatic SC',
                     fontWeight: 700,
                     letterSpacing: '.2rem',
                     color: 'inherit',
                     textDecoration: 'none',
-                    fontSize:'clamp(1.2rem, 2.5vw, 2.8rem)'
+                    fontSize:'clamp(1.2rem, 2.0vw, 3rem)'
                     }}
                 >
                     {res.title[Number(language)]}
@@ -46,9 +46,9 @@ export default function TitleBodyImg({res , height = 250}) {
                         whiteSpace:"pre-line",
                     mr: 1,
                     display:  'flex' ,
-                    fontFamily: 'Amatic SC',
-                    fontWeight: 700,
-                    fontSize:'clamp(1rem, 2.5vw, 2rem)',
+                    // fontFamily: 'Amatic SC',
+                    // fontWeight: 700,
+                    fontSize:'clamp(1rem, 2.5vw, 1.5rem)',
                     color: 'inherit',
                     textDecoration: 'none',
                     }}

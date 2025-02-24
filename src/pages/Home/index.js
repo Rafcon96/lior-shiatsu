@@ -66,8 +66,8 @@ function Home() {
             wordSpacing: "0.2rem",
             lineHeight:1.6,
             display:  'flex',
-            fontFamily: 'Amatic SC',
-            fontWeight: 700,
+            // fontFamily: 'Amatic SC',
+            // fontWeight: 700,
             color: 'black',
             textDecoration: 'none',
             fontSize:'clamp(1rem, 2vw, 1.6rem)'
