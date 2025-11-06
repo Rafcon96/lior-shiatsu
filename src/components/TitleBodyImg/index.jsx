@@ -32,7 +32,7 @@ export default function TitleBodyImg({res , height = 250}) {
                     letterSpacing: '.2rem',
                     color: 'inherit',
                     textDecoration: 'none',
-                    fontSize:'clamp(1.2rem, 2.0vw, 3rem)'
+                    fontSize:'clamp(1.2rem, 3vw, 3rem)'
                     }}
                 >
                     {res.title[Number(language)]}

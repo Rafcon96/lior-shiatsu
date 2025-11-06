@@ -27,10 +27,10 @@ export default function HeaderBody({res}) {
           <Grid item container justifyContent={"center"}>
             <Typography
                 // variant="h6"
-                align={'right'}
+                // align={language ? 'right' : 'left'}
                 sx={{
                   whiteSpace:"pre-line",
-                mr: 2,
+                mx: 2,
                 display:  'flex' ,
                 // fontFamily: 'Amatic SC',
                 fontWeight: 700,
@@ -45,12 +45,12 @@ export default function HeaderBody({res}) {
           <Grid item container justifyContent={"center"} sx={{marginTop:2}}>
             <Typography
                 // variant="h6"
-                align={'right'}
+                // align={'right'}
                 sx={{
-                mr: 2,
+                mx: 2,
                 display:  'flex' ,
                 // fontFamily: 'Amatic SC',
-                fontWeight: 700,
+                fontWeight: 500,
                 
                 color: 'inherit',
                 textDecoration: 'none',
