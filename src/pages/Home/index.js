@@ -48,10 +48,10 @@ function Home() {
   const onBtnClick = (path) => {navigate(path)}
 
   return (
-    <Grid container direction={'row'} sx={{backgroundImage:`url(${process.env.PUBLIC_URL}/home-background.jpg)`,paddingBottom:7}} dir="rtl">
+    <Grid container direction={'row'} sx={{backgroundImage:`url(${process.env.PUBLIC_URL}/home-background.jpg)`,paddingBottom:7}} dir={language ? 'ltr' : 'rtl'}>
       <Grid item direction={'column'} container xs={12} sm={6} justifyContent={'center'}>
         <Grid item container justifyContent={'center'} sx={{paddingTop:"20px"}}>
-          <img src={`${process.env.PUBLIC_URL}/liorLogo2.png`} style={{width:"50%",borderRadius:'50%',boxShadow: '3px 3px red, -1em 0 .4em olive'}}/>
+          <img src={`${process.env.PUBLIC_URL}/liorLogo2.png`} alt={language ? 'Lior logo' : 'ליאור לוגו'} style={{width:"50%",borderRadius:'50%',boxShadow: '3px 3px red, -1em 0 .4em olive'}}/>
         </Grid>
       <Grid item >
         <Typography
@@ -87,7 +87,7 @@ function Home() {
       </Grid>
       </Grid>
       <Grid item container sm={6} xs={12} justifyContent={'center'}  style={{order:0}}>
-        <img src={`${process.env.PUBLIC_URL}/liorHome.jpeg`} style={{width:"95%",borderRadius:'10%',marginTop:20}}/>  
+        <img src={`${process.env.PUBLIC_URL}/liorHome.jpeg`} alt={"img"} style={{width:"95%",borderRadius:'10%',marginTop:20}}/>  
       </Grid>
       
 
@@ -96,7 +96,5 @@ function Home() {
     </Grid>
   );
 }
-{/* <ImageSlider slides={slides} /> */}
-            {/* <Contact /> */}
 
 export default Home;

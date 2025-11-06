@@ -13,11 +13,17 @@ import "./styles.css";
 import { Pagination, Autoplay } from "swiper/modules";
 import Testimonial from "../../components/Testimonial";
 import Container from "@mui/material/Container";
-import { Typography, useMediaQuery, Grid, Box } from "@mui/material";
+import { Typography, useMediaQuery, Grid } from "@mui/material";
+import { useLang } from "../../context/language.context";
 import Cube from "../../components/Cube";
+
+const res = {
+  heading: ["ביקורות ממטופלים מגוגל", "Reviews from Google"],
+}
 
 export default function TestimonialSwiper() {
   const isMobileView = useMediaQuery("(max-width:1200px)");
+  const { language } = useLang();
   return (
     <Container maxWidth="lg" sx={{ minHeight: "calc(100vh - 250px)" }}>
       <Typography
@@ -39,7 +45,7 @@ export default function TestimonialSwiper() {
           fontSize: "clamp(1.5rem, 2vw, 2.2rem)",
         }}
       >
-        ביקורות ממטופלים מגוגל
+        {res.heading[Number(language)]}
       </Typography>
       {/* <Typography
         variant="h2"

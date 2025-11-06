@@ -7,8 +7,11 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { useLang } from '../../context/language.context';
 
 export default function MediaCard({imgPath, title, body, linkPath}) {
+  const { language } = useLang();
+  const btnText = ["קרא עוד...", "Read more..."][Number(language)];
   return (
     <Card sx={{ maxWidth: 345, display:"grid" }}>
       <CardMedia
@@ -20,14 +23,15 @@ export default function MediaCard({imgPath, title, body, linkPath}) {
         <Typography gutterBottom variant="h5" component="div">
           {title}
         </Typography>
-        <Typography variant="body2" color="text.secondary" sx={{textAlign:'right'}}>
+        <Typography variant="body2" color="text.secondary">
           {body}
         </Typography>
       </CardContent>
       <CardActions  >
-        <Grid container alignItems={'flex-end'} >
-        
-        <Button variant='outlined' href={linkPath} size="small"><Link to={linkPath}>קרא עוד...</Link></Button>
+        <Grid container alignItems={'flex-end'} dir={language ? 'ltr' : 'rtl'}>
+          <Button variant='outlined' href={linkPath} size="small">
+            <Link to={linkPath} style={{ textDecoration: 'none', color: 'inherit' }}>{btnText}</Link>
+          </Button>
         </Grid>
       </CardActions>
     </Card>

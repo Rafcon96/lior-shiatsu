@@ -2,7 +2,7 @@ import { Grid, Typography } from '@mui/material'
 import React from 'react'
 import HeaderBody from '../../components/HeaderBody'
 import TitleBodyImg from '../../components/TitleBodyImg'
-// import { useLang } from '../../context/language.context'
+import { useLang } from '../../context/language.context'
 import Card from '../../components/Card'
 
 const res = {
@@ -65,9 +65,9 @@ const content = [
    ]
 
 export default function About() {
-    // const {language} = useLang()
+    const {language} = useLang()
   return (
-    <Grid container dir="rtl">
+    <Grid container dir={language ? 'ltr' : 'rtl'}>
         <Grid container justifyContent={"center"}>
         <Grid item container justifyContent={"center"} sx={{marginBottom:5, pr:1}} maxWidth={800}>
             <HeaderBody res={res} />
@@ -95,33 +95,42 @@ export default function About() {
                     textDecoration: 'none',
                     }}
                 >
-                   טיפולים שאני מציע:
+                   {res.header[Number(language)]}
                 </Typography>
           </Grid>
         <Grid container justifyContent={'center'} spacing={2}>
             <Grid container item lg={4} xs={12} justifyContent={'center'}><Card 
                 imgPath={'/lior1.png'} 
-                title={"שיאצו"} 
+                title={["שיאצו","Shiatsu"][Number(language)]} 
                 linkPath={"../shiatsu"}
-                body={`
-                שיאצוּ (ביפנית: 指圧 "שי" משמעו- אצבע, ו"אצו"- לחץ) היא שיטת טיפול במגע בתחום הרפואה המשלימה. מקורה ביפן, שם היא טיפול רפואי מורשה. 
-        היכולה לסייע בבעיות אורתופדיות בעמוד השדרה, בעיות פנימיות בתחומי נוירולוגיה, בעיות עיכול, גינקולוגיה, בעיות רגשיות כמו הפרעות שינה, מתח, דיכאון ועוד.`}
+                body={[
+`שיאצוּ (ביפנית: 指圧 "שי" משמעו- אצבע, ו"אצו"- לחץ) היא שיטת טיפול במגע בתחום הרפואה המשלימה. מקורה ביפן, שם היא טיפול רפואי מורשה.
+יכולה לסייע בבעיות אורתופדיות בעמוד השדרה, בעיות פנימיות בתחומי נוירולוגיה, בעיות עיכול, גינקולוגיה, ובעיות רגשיות כמו הפרעות שינה, מתח ודיכאון.`,
+`Shiatsu (Japanese bodywork) is used for orthopedic spine issues, internal conditions (neurology, digestion, gynecology), and emotional concerns like sleep disorders, stress, and low mood.`
+][Number(language)]}
              /></Grid>
              <Grid item lg={4} xs={12} container justifyContent={'center'}><Card 
                 imgPath={'/dickor1.jpg'} 
-                title={"דיקור"} 
+                title={["דיקור","Acupuncture"][Number(language)]} 
                 linkPath={"../acupuncture"}
-                body={`למה אנחנו דוקרים,  ואיך זה עובד ? 
-                ישנן המון השערות ומחקרים רבים שנעשו ונעשים כל הזמן, אך התעלומה טרם נפתרה.
-                ההסבר המדעי כיום מציע שהמחט גורמת לגירוי רפלקסים של מערכת העצבים 
-                ולשחרור אנדורפינים ויוצרת זרימת דם טובה יותר באזור הנדקר. מה שמפחית את מדדי הדלקת 
-                    ואת הפעילות החשמלית הספונטנית.`}
+                body={[
+`למה אנחנו דוקרים, ואיך זה עובד?
+ישנן המון השערות ומחקרים רבים; ההסבר המדעי מדבר על גירוי רפלקסים של מערכת העצבים,
+שחרור אנדורפינים ושיפור זרימת הדם המקומית — מה שמפחית מדדי דלקת ופעילות חשמלית ספונטנית.`,
+`Why acupuncture, and how does it work?
+Hypotheses include reflex stimulation of the nervous system, endorphin release, and improved local blood flow — reducing inflammatory markers and spontaneous electrical activity.`
+][Number(language)]}
              /></Grid>
              <Grid item lg={4} xs={12} container justifyContent={'center'}><Card 
                 imgPath={'/car2.jpg'} 
-                title={"כוסות רוח"} 
+                title={["כוסות רוח","Cupping therapy"][Number(language)]} 
                 linkPath={"../cuppingTherapy"}
-                body={`איך זה עובד ? במהלך הטיפול יוצרים תת-לחץ בחלל הכוס ומשאירים אותה למספר דקות. בעקבות יצירת הוואקום העור נמשך פנימה אל הכוס, משיכת העור והשריר העדינה למס' הדקות עוזרת לשחרורו ומשערים שהלחץ השלילי המופעל גורם לזרימת דם מוגברת לאזור. `}
+                body={[
+`איך זה עובד?
+במהלך הטיפול יוצרים תת-לחץ בחלל הכוס ומשאירים אותה למספר דקות; הוואקום מושך את העור פנימה ומגביר זרימת דם, לעיתים מסייע לשחרור השריר ולהקלה מידית בכאב.`,
+`How does it work?
+Negative pressure is created inside the cup for a few minutes; the vacuum draws tissue up, increases blood flow, can help muscle release, and often provides immediate pain relief.`
+][Number(language)]}
              /></Grid>
         </Grid>    
     </Grid>
