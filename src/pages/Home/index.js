@@ -1,7 +1,6 @@
-// import ImageSlider from '../../components/Carousel'
 import React from "react";
-// import Contact from '../Contact';
-import { Button, Grid, Typography } from '@mui/material';
+import { Button, Grid, Typography, Box, Container } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import { useLang } from "../../context/language.context";
 import { useNavigate } from "react-router-dom";
 
@@ -30,70 +29,231 @@ const res = {
     Over the years I have collected many tools to produce the best and personalized treatment experience for each patient that combines an understanding of the Western and Eastern worlds of medicine`
   ],
   actionButtons:[
-    {buttonTitle:[`על הטיפול`,`About`],path:'../About'},
-    // {buttonTitle:[`טיפולים`,`treatments`],path:'../treatments'},
-    {buttonTitle:[`מחירון`,`prices`],path:'../prices'},
-    // {buttonTitle:[`צור קשר`,`contact`],path:'lior-shiatsu/contact'},
-  ]
+    {buttonTitle:[`על הטיפול`,`About Treatment`],path:'/about'},
+    {buttonTitle:[`מחירון`,`Pricing`],path:'/prices'},
+  ],
+  title: ['ברוכים הבאים', 'Welcome'],
+  subtitle: ['טיפול הוליסטי משולב', 'Holistic Integrated Treatment']
 }
 
-// const containerStyles = {
-//   width: "500px",
-//   height: "280px",
-//   margin: "0 auto",
-// };
+const HeroSection = styled(Box)(({ theme }) => ({
+  minHeight: 'calc(100vh - 90px)',
+  background: 'linear-gradient(135deg, rgba(233, 241, 239, 0.95) 0%, rgba(255, 255, 255, 0.98) 50%, rgba(247, 246, 243, 0.95) 100%)',
+  position: 'relative',
+  overflow: 'hidden',
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundImage: `url(${process.env.PUBLIC_URL}/home-background.jpg)`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    opacity: 0.15,
+    zIndex: 0,
+  },
+  '& > *': {
+    position: 'relative',
+    zIndex: 1,
+  },
+  padding: theme.spacing(4, 0),
+  [theme.breakpoints.down('md')]: {
+    minHeight: 'auto',
+    padding: theme.spacing(3, 0),
+  },
+}));
+
+const ContentCard = styled(Box)(({ theme }) => ({
+  background: 'rgba(255, 255, 255, 0.9)',
+  borderRadius: '24px',
+  padding: theme.spacing(4),
+  boxShadow: '0 8px 32px var(--shadow)',
+  backdropFilter: 'blur(10px)',
+  border: '1px solid rgba(106, 166, 166, 0.2)',
+  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+  '&:hover': {
+    transform: 'translateY(-4px)',
+    boxShadow: '0 12px 40px var(--shadow)',
+  },
+  [theme.breakpoints.down('md')]: {
+    padding: theme.spacing(3),
+    borderRadius: '16px',
+  },
+}));
+
+const ImageContainer = styled(Box)(({ theme }) => ({
+  position: 'relative',
+  borderRadius: '20px',
+  overflow: 'hidden',
+  boxShadow: '0 12px 40px var(--shadow)',
+  '& img': {
+    width: '100%',
+    height: 'auto',
+    display: 'block',
+    transition: 'transform 0.5s ease',
+  },
+  '&:hover img': {
+    transform: 'scale(1.05)',
+  },
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    background: 'linear-gradient(135deg, rgba(106, 166, 166, 0.12) 0%, transparent 100%)',
+    pointerEvents: 'none',
+  },
+}));
+
+const LogoContainer = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'center',
+  marginBottom: theme.spacing(3),
+  '& img': {
+    width: '150px',
+    height: '150px',
+    borderRadius: '50%',
+    boxShadow: '0 8px 24px var(--shadow)',
+    border: '4px solid rgba(255, 255, 255, 0.9)',
+    transition: 'transform 0.3s ease',
+    '&:hover': {
+      transform: 'scale(1.05) rotate(5deg)',
+    },
+    [theme.breakpoints.down('md')]: {
+      width: '120px',
+      height: '120px',
+    },
+  },
+}));
+
+const StyledButton = styled(Button)(({ theme }) => ({
+  background: 'var(--primary)',
+  color: 'white',
+  padding: theme.spacing(1.5, 4),
+  borderRadius: '9999px',
+  fontSize: '16px',
+  fontWeight: 600,
+  textTransform: 'none',
+  boxShadow: '0 4px 12px var(--shadow)',
+  transition: 'all 0.3s ease',
+  '&:hover': {
+    background: 'var(--primary-dark)',
+    transform: 'translateY(-2px)',
+    boxShadow: '0 6px 20px var(--shadow)',
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(1, 3),
+    fontSize: '14px',
+  },
+}));
+
+const TitleTypography = styled(Typography)(({ theme }) => ({
+  background: 'linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%)',
+  WebkitBackgroundClip: 'text',
+  WebkitTextFillColor: 'transparent',
+  backgroundClip: 'text',
+  fontFamily: "'Playfair Display', serif",
+  fontWeight: 700,
+  marginBottom: theme.spacing(2),
+  [theme.breakpoints.down('md')]: {
+    fontSize: '2rem',
+  },
+}));
+
+const SubtitleTypography = styled(Typography)(({ theme }) => ({
+  color: 'var(--primary)',
+  fontFamily: "'Playfair Display', serif",
+  fontWeight: 500,
+  marginBottom: theme.spacing(3),
+  fontSize: '1.2rem',
+  fontStyle: 'italic',
+  [theme.breakpoints.down('md')]: {
+    fontSize: '1rem',
+  },
+}));
+
 function Home() {
   const {language} = useLang()
   const navigate = useNavigate()
   const onBtnClick = (path) => {navigate(path)}
 
   return (
-    <Grid container direction={'row'} sx={{backgroundImage:`url(${process.env.PUBLIC_URL}/home-background.jpg)`,paddingBottom:7}} dir={language ? 'ltr' : 'rtl'}>
-      <Grid item direction={'column'} container xs={12} sm={6} justifyContent={'center'}>
-        <Grid item container justifyContent={'center'} sx={{paddingTop:"20px"}}>
-          <img src={`${process.env.PUBLIC_URL}/liorLogo2.png`} alt={language ? 'Lior logo' : 'ליאור לוגו'} style={{width:"50%",borderRadius:'50%',boxShadow: '3px 3px red, -1em 0 .4em olive'}}/>
-        </Grid>
-      <Grid item >
-        <Typography
-          variant="h4"
-          align={'center'}
-          textAlign={'center'}
-          alignContent={'center'}
-          justifyContent={'center'}
-          sx={{
-            m:3,
-            whiteSpace:"pre-line",
-            wordSpacing: "0.2rem",
-            lineHeight:1.6,
-            display:  'flex',
-            // fontFamily: 'Amatic SC',
-            // fontWeight: 700,
-            color: 'black',
-            textDecoration: 'none',
-            fontSize:'clamp(1rem, 2vw, 1.6rem)'
-          }}
-          >
-              {res.body[Number(language)]}
-          </Typography>
-      </Grid >
-        <Grid item container spacing={2} justifyContent={"center"} >
-          {
-            res.actionButtons.map((btn,index)=>
-              <Grid item key={index}>
-                <Button onClick={e=>{onBtnClick(btn.path)}} size='large' sx={{fontSize:'clamp(0.5rem, 2.5vw, 1rem)',width:'clamp(70px, 2.5vw, 100)'}} variant="contained">{btn.buttonTitle[Number(language)]}</Button>
-              </Grid>
-            )
-          }
-      </Grid>
-      </Grid>
-      <Grid item container sm={6} xs={12} justifyContent={'center'}  style={{order:0}}>
-        <img src={`${process.env.PUBLIC_URL}/liorHome.jpeg`} alt={"img"} style={{width:"95%",borderRadius:'10%',marginTop:20}}/>  
-      </Grid>
-      
+    <HeroSection>
+      <Container maxWidth="lg">
+        <Grid container spacing={4} alignItems="center" sx={{ minHeight: { xs: 'auto', md: 'calc(100vh - 200px)' } }}>
+          {/* Left Column - Content */}
+          <Grid item xs={12} md={6} order={{ xs: 2, md: language ? 1 : 1 }}>
+            <ContentCard>
+              <LogoContainer>
+                <img 
+                  src={`${process.env.PUBLIC_URL}/liorLogo2.png`} 
+                  alt={language ? 'Lior logo' : 'ליאור לוגו'} 
+                />
+              </LogoContainer>
+              
+              <TitleTypography
+                variant="h3"
+                align="center"
+                sx={{
+                  fontSize: { xs: '2rem', md: '2.5rem' },
+                }}
+              >
+                {res.title[Number(language)]}
+              </TitleTypography>
 
-            
-      
-    </Grid>
+              <SubtitleTypography
+                variant="h5"
+                align="center"
+              >
+                {res.subtitle[Number(language)]}
+              </SubtitleTypography>
+
+              <Typography
+                variant="body1"
+                align="center"
+                sx={{
+                  whiteSpace: "pre-line",
+                  wordSpacing: "0.2rem",
+                  lineHeight: 1.8,
+                  color: 'var(--text-muted)',
+                  fontSize: { xs: '0.95rem', md: '1.1rem' },
+                  mb: 4,
+                }}
+              >
+                {res.body[Number(language)]}
+              </Typography>
+
+              <Grid container spacing={2} justifyContent="center">
+                {res.actionButtons.map((btn, index) => (
+                  <Grid item key={index}>
+                    <StyledButton 
+                      onClick={() => onBtnClick(btn.path)} 
+                      size="large"
+                    >
+                      {btn.buttonTitle[Number(language)]}
+                    </StyledButton>
+                  </Grid>
+                ))}
+              </Grid>
+            </ContentCard>
+          </Grid>
+
+          {/* Right Column - Image */}
+          <Grid item xs={12} md={6} order={{ xs: 1, md: language ? 2 : 2 }}>
+            <ImageContainer>
+              <img 
+                src={`${process.env.PUBLIC_URL}/liorHome.jpeg`} 
+                alt={language ? "Lior Shahar - Massage and Wellness Therapist" : "ליאור שחר - מטפל בעיסוי ובריאות"} 
+              />
+            </ImageContainer>
+          </Grid>
+        </Grid>
+      </Container>
+    </HeroSection>
   );
 }
 

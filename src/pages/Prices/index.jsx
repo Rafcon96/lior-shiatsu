@@ -1,114 +1,75 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, Box, Paper } from "@mui/material";
 import React from "react";
 import { useLang } from "../../context/language.context";
 // import Testimonial from "../../components/Testimonial";
 
 const res = {
-  title: ["מחירון לשעת טיפול", "price for hour of treatment"],
-  header: {
-    title: ["טיפול", "treatment"],
-    price1: ["מחיר רגיל", "Reguler Price"],
-    price2: ["מחיר", "discount Price"],
-  },
+  title: ["מחירון לשעת טיפול", "Price For Hour Of Treatment"],
+  subtitle: [
+    "בחרו את הטיפול המתאים לכם וקבלו חוויית ריפוי מלאה.",
+    "Choose the session that fits you and enjoy a full healing experience.",
+  ],
 };
 const itemRes = [
-  { title: ["שיאצו ודיקור /שיאצו", "Shiatsu"], price1: 300, price2: 280 },
-  // {title:["שיאצו ודיקור", "shiatsu & acupuncture"],price1:300,price2:280},
   {
-    title: ["עיסוי / עיסוי משולב", "massage / massage with other"],
-    price1: 350,
-    price2: 300,
+    title: ["שיאצו ודיקור / שיאצו", "Shiatsu"],
+    description: [
+      "איזון אנרגטי דרך לחץ עדין על מרידיאנים לשחרור מתחים.",
+      "Gentle acupressure along meridians to release tension and restore flow.",
+    ],
+    price: 300,
   },
-  { title: ["טיפול עד הבית", "house treatment"], price1: 400, price2: 350 },
+  {
+    title: ["עיסוי / עיסוי משולב", "Massage / Combo Massage"],
+    description: [
+      "טיפול משולב בעיסוי עמוק ומגע מרגיע להרפיית השרירים.",
+      "Blended deep tissue and relaxing touch for muscular relief.",
+    ],
+    price: 350,
+  },
+  {
+    title: ["טיפול עד הבית", "Home Treatment"],
+    description: [
+      "מטפל מגיע עד אליכם עם כל הציוד לחוויית טיפול פרטית.",
+      "Therapist arrives fully equipped for a private in-home experience.",
+    ],
+    price: 400,
+  },
 ];
 
 export default function Prices() {
   const { language } = useLang();
-  const row = (res) => {
-    return (
-      <Grid
-        container
-        justifyContent={"center"}
-        alignItems={"flex-start"}
-        sx={{ maxHeight: "100px" }}
-        dir="ltr"
-      >
-        <Grid xs={4} item sx={{ order: language ? 1 : 3 }}>
-          <Typography
-            variant="h6"
-            align={"center"}
-            textAlign={"center"}
-            alignContent={"center"}
-            justifyContent={"center"}
-            sx={{
-              p: 2,
-              display: "flex",
+  const currency = language ? "NIS" : 'ש"ח';
+  const isEnglish = Boolean(language);
+  const localeIndex = Number(language);
 
-              fontFamily: "Amatic SC",
-              fontWeight: 700,
-              color: "inherit",
-              textDecoration: "none",
-              fontSize: "clamp(1rem, 2.5vw, 2rem)",
-            }}
-          >
-            {res.title[Number(language)]}
-          </Typography>
-        </Grid>
-        <Grid xs={4} item sx={{ order: 2 }}>
-          <Typography
-            variant="h6"
-            align={"center"}
-            textAlign={"center"}
-            alignContent={"center"}
-            justifyContent={"center"}
-            sx={{
-              m: 2,
-              display: "flex",
-
-              fontFamily: "Amatic SC",
-              fontWeight: 700,
-              color: "inherit",
-              textDecoration: "line-through",
-              fontSize: "clamp(1rem, 2.5vw, 2rem)",
-            }}
-          >
-            {res.price1}
-          </Typography>
-        </Grid>
-        <Grid xs={4} item sx={{ order: language ? 3 : 1 }}>
-          <Typography
-            variant="h6"
-            align={"center"}
-            textAlign={"center"}
-            alignContent={"center"}
-            justifyContent={"center"}
-            sx={{
-              p: 2,
-              display: "flex",
-
-              fontFamily: "Amatic SC",
-              fontWeight: 700,
-              color: "inherit",
-              textDecoration: "none",
-              fontSize: "clamp(1rem, 2.5vw, 2rem)",
-            }}
-          >
-            {res.price2}
-          </Typography>
-        </Grid>
-      </Grid>
-    );
+  const capitalizeLine = (text) => {
+    if (!text) return text;
+    if (isEnglish) {
+      return text.charAt(0).toUpperCase() + text.slice(1);
+    }
+    return text;
   };
 
   return (
-    <Grid container justifyContent={"center"} dir="ltr" minHeight={"100vh"}>
-      <Grid container>
+    <Grid container justifyContent={"center"} minHeight={"100vh"}>
+      <Grid
+        container
+        sx={{
+          maxWidth: "2100px",
+          width: "100%",
+          mx: "auto",
+          px: { xs: 2, sm: 3, md: 4 },
+          py: { xs: 4, md: 6 },
+        }}
+        rowSpacing={{ xs: 3, md: 3 }}
+      >
         <Grid
           item
           container
           justifyContent={"center"}
           alignItems={"center"}
-          sx={{ maxHeight: 100 }}
+          sx={{ mt: { xs: 1, md: 2 } }}
         >
           <Typography
             variant="h2"
@@ -117,100 +78,117 @@ export default function Prices() {
             alignContent={"center"}
             justifyContent={"center"}
             sx={{
-              p: 2,
+              p: 1.5,
               display: "flex",
               fontFamily: "Amatic SC",
               fontWeight: 700,
               color: "inherit",
               textDecoration: "none",
-              fontSize: "clamp(2rem, 2.5vw, 2.5rem)",
+              fontSize: "clamp(1.8rem, 2.2vw, 2.3rem)",
             }}
           >
-            {res.title[Number(language)]}
+            {capitalizeLine(res.title[localeIndex])}
           </Typography>
         </Grid>
-        <Grid container sx={{}}>
-          <Grid xs={4} item sx={{ order: language ? 0 : 2 }}>
-            <Typography
-              variant="h6"
-              align={"center"}
-              textAlign={"center"}
-              alignContent={"center"}
-              justifyContent={"center"}
-              sx={{
-                m: 2,
-                display: "flex",
-                fontFamily: "Amatic SC",
-                fontWeight: 700,
-
-                color: "inherit",
-                textDecoration: "none",
-                fontSize: "clamp(1rem, 2.5vw, 2rem)",
-              }}
-            >
-              {res.header.title[Number(language)]}
-            </Typography>
-          </Grid>
-          <Grid xs={4} item sx={{ order: 1 }}>
-            <Typography
-              variant="h6"
-              align={"center"}
-              textAlign={"center"}
-              alignContent={"center"}
-              justifyContent={"center"}
-              sx={{
-                m: 2,
-                display: "flex",
-
-                fontFamily: "Amatic SC",
-                fontWeight: 700,
-                color: "inherit",
-                textDecoration: "none",
-                fontSize: "clamp(1rem, 2.5vw, 2rem)",
-              }}
-            >
-              {res.header.price1[Number(language)]}
-            </Typography>
-          </Grid>
-          <Grid xs={4} item sx={{ order: language ? 2 : 0 }}>
-            <Typography
-              variant="h6"
-              align={"center"}
-              textAlign={"center"}
-              alignContent={"center"}
-              justifyContent={"center"}
-              sx={{
-                m: 2,
-                display: "flex",
-                fontFamily: "Amatic SC",
-                fontWeight: 700,
-                color: "inherit",
-                textDecoration: "none",
-                fontSize: "clamp(1rem, 2.5vw, 2rem)",
-              }}
-            >
-              {res.header.price2[Number(language)]}
-            </Typography>
-          </Grid>
-        </Grid>
-        <Grid
-          container
-          sx={{ borderBottom: "1px solid black", order: 2, maxHeight: "2px" }}
-          justifyContent={"center"}
-        ></Grid>
-      </Grid>
-      <Grid container>
-        {itemRes.map((item, index) => (
-          <Grid
-            container
-            justifyContent={"center"}
-            sx={{ maxHeight: 100 }}
-            order={index + 3}
-            key={index}
+        <Grid item xs={12} sx={{ px: { xs: 0.5, sm: 1 } }}>
+          <Typography
+            align={"center"}
+            sx={{
+              color: "#4a5b47",
+              fontSize: "clamp(0.95rem, 2vw, 1.2rem)",
+              fontWeight: 500,
+              letterSpacing: isEnglish ? "0.02em" : 0,
+            }}
           >
-            {row(item)}
-          </Grid>
-        ))}
+            {capitalizeLine(res.subtitle[localeIndex])}
+          </Typography>
+        </Grid>
+        <Grid item container spacing={{ xs: 2, sm: 2.5, md: 3 }}>
+          {itemRes.map((item, index) => {
+            const localizedTitle = capitalizeLine(item.title[localeIndex]);
+            const localizedDescription = capitalizeLine(
+              item.description[localeIndex]
+            );
+            return (
+              <Grid key={index} item xs={12} sm={6} md={4}>
+                <Paper
+                  elevation={8}
+                  sx={{
+                    height: "100%",
+                    p: { xs: 2.5, sm: 2.7, md: 3 },
+                    borderRadius: 4,
+                    position: "relative",
+                    overflow: "hidden",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 1.5,
+                    background: "linear-gradient(165deg, #ffffff 0%, #f4f7f4 100%)",
+                    boxShadow: "0 16px 32px -20px rgba(31, 64, 38, 0.5)",
+                    border: "1px solid rgba(64, 112, 77, 0.08)",
+                    transition: "transform 240ms ease, box-shadow 240ms ease",
+                    textAlign: isEnglish ? "left" : "right",
+                    "&:hover": {
+                      transform: "translateY(-4px)",
+                      boxShadow: "0 26px 45px -20px rgba(31, 64, 38, 0.6)",
+                    },
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontFamily: "Amatic SC",
+                      fontSize: "clamp(1.6rem, 2.2vw, 2rem)",
+                      fontWeight: 700,
+                      color: "#2f5232",
+                      letterSpacing: isEnglish ? "0.04em" : 0,
+                    }}
+                  >
+                    {localizedTitle}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      flexGrow: 1,
+                      color: "#4f5d4c",
+                      fontSize: "clamp(0.9rem, 1.7vw, 1.05rem)",
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    {localizedDescription}
+                  </Typography>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: isEnglish ? "flex-start" : "flex-end",
+                      alignItems: "center",
+                      gap: 1,
+                      mt: 1,
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        fontWeight: 700,
+                        color: "#2f5232",
+                        fontSize: "clamp(1.25rem, 2.4vw, 1.6rem)",
+                      }}
+                    >
+                      {item.price}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontWeight: 600,
+                        color: "#7a8a76",
+                        fontSize: "clamp(0.85rem, 1.6vw, 1rem)",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.08em",
+                      }}
+                    >
+                      {currency}
+                    </Typography>
+                  </Box>
+                </Paper>
+              </Grid>
+            );
+          })}
+        </Grid>
       </Grid>
       {/* <Grid container justifyContent={"flex-end"} sx={{ padding: 5 }}>
         <Grid container justifyContent={"flex-end"}>

@@ -19,13 +19,92 @@ import Cube from "../../components/Cube";
 
 const res = {
   heading: ["ביקורות ממטופלים מגוגל", "Reviews from Google"],
+  testimonials: [
+    {
+      name: "Diana Shvartz",
+      avatar: "D.S",
+      testimonial: [
+        "הגעתי לטיפול הראשון בעקבות כאבי גב חוזרים. חששתי מהדיקור וליאור היה קשוב, מרגיע ומקצועי מאד! ממליצה בחום 🙏🏾",
+        "I came for my first treatment due to recurring back pain. I was afraid of acupuncture and Lior was attentive, calming and very professional. Highly recommended 🙏🏾",
+      ],
+    },
+    {
+      name: "ron dishak",
+      avatar: "R.D",
+      testimonial: [
+        "ליאור היה קשוב אליי וידע לדייק את הטיפול. הרגשתי את האנרגיות בגוף בימים שלאחרי הטיפול. תודה לך על מגע קסום והרגשה קסומה עוד יותר!",
+        "Lior listened to me and knew how to tailor the treatment precisely. I felt the energy in my body in the days after the session. Thank you for a magical touch and an even more magical feeling!",
+      ],
+    },
+    {
+      name: "Noam Younger",
+      avatar: "N.Y",
+      testimonial: [
+        "הגעתי לליאור בעקבות כאבים בכתף לסדרה של טיפולים והוא ממש ממש עזר לי! מטפל בחסד בעל ידי זהב! מומלץ בחום",
+        "I came to Lior because of shoulder pain for a series of treatments and he really helped me! A gifted therapist with golden hands! Highly recommended.",
+      ],
+    },
+    {
+      name: "omer ema",
+      avatar: "O.E",
+      testimonial: [
+        "מגיעה לטיפולים אצל ליאור אחת לחודש למעלה משנתיים! אני מאמנת כושר וסובלת מפציעות ספורט. הטיפולים אצל ליאור מסייעים לי באיזון הגוף והנפש ומפיגים עומסים ולחצים. ממליצה מכל הלב, סומכת על ליאור בעיניים עצומות ונהנית מכל רגע!",
+        "I've been coming to Lior once a month for over two years! I'm a fitness trainer and suffer from sports injuries. Lior's treatments help balance body and mind and release stress and tension. Highly recommended — I trust Lior completely and enjoy every moment!",
+      ],
+    },
+    {
+      name: "tedy raviv",
+      avatar: "T.R",
+      testimonial: [
+        "הייתי צריך טיפול דחוף בגלל צוואר תפוס, הסכים לקבל אותי באותו יום ועזר לי מאוד.",
+        "I needed urgent treatment for a stiff neck; he agreed to see me the same day and helped me a lot.",
+      ],
+    },
+    {
+      name: "limor haviv",
+      avatar: "L.H",
+      testimonial: [
+        "מטפל מדהים. באתי בעקבות כאבי גב והוא ממש עזר לי. מומלץ בחום",
+        "An amazing therapist. I came because of back pain and he really helped me. Highly recommended.",
+      ],
+    },
+    {
+      name: "Rafa",
+      avatar: "R",
+      testimonial: [
+        "באתי לליאור לאחר פציעה. הוא היה מאוד מקצועי, בדק ותשאל. עזר לי עם הפציעה לאחר סדרת טיפולים. מאוד מומלץ ומקצועי.",
+        "I came to Lior after an injury. He was very professional, examined me and asked thorough questions. He helped me recover after a series of treatments. Highly recommended and professional.",
+      ],
+    },
+    {
+      name: "Connie Naymark",
+      avatar: "C.N",
+      testimonial: [
+        "ליאור היה מקסים ומקצועי, סופר אכפתי וער לצרכי המטופל. ממש נהניתי!!♥️",
+        "Lior was lovely and professional, super caring and attentive to the patient's needs. I really enjoyed!! ♥️",
+      ],
+    },
+    {
+      name: ["איתי רייכנטל", "Itay Reichental"],
+      avatar: "א.ר",
+      testimonial: [
+        "כבר שנים שאני הולך למעסים וליאור הוא פשוט מדהים, משחרר מתחים, תפיסות של אחרי אימון ונותן חוויה ייחודית. מומלץ בחום!",
+        "I've been going to massage therapists for years and Lior is simply amazing — releases tension, post-workout tightness, and provides a unique experience. Highly recommended!",
+      ],
+    },
+  ],
 }
 
 export default function TestimonialSwiper() {
   const isMobileView = useMediaQuery("(max-width:1200px)");
   const { language } = useLang();
   return (
-    <Container maxWidth="lg" sx={{ minHeight: "calc(100vh - 250px)" }}>
+    <Container
+      maxWidth="lg"
+      sx={{ minHeight: "calc(100vh - 250px)" }}
+      dir={language ? "ltr" : "rtl"}
+    >
+     
       <Typography
         variant="h2"
         align={"center"}
@@ -68,8 +147,14 @@ export default function TestimonialSwiper() {
       >
         מוזמנים לבוא לטיפול או סידרת טיפולים במחיר מוזל
       </Typography> */}
-      <Grid container   sx={{ maxWidth: isMobileView ? 350 : "100%", margin: "0 auto" }}>
-       {isMobileView ? <Cube />  : <Swiper
+      <Grid
+        container
+        sx={{ maxWidth: isMobileView ? 350 : "100%", margin: "0 auto" }}
+      >
+        {isMobileView ? (
+          <Cube language={language} res={res} />
+        ) : (
+          <Swiper
           // effect={"coverflow"}
           grabCursor={true}
           // centeredSlides={true}
@@ -92,86 +177,27 @@ export default function TestimonialSwiper() {
           modules={[Pagination, Autoplay]}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <Testimonial
-              name={"Diana Shvartz"}
-              testimonial={
-                " הגעתי לטיפול הראשון בעקבות כאבי גב חוזרים. חששתי מהדיקור וליאור היה קשוב, מרגיע ומקצועי מאד! ממליצה בחום 🙏🏾"
-              }
-              avatar={"D.S"}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Testimonial
-              name={"ron dishak"}
-              testimonial={
-                "ליאור היה קשוב אליי וידע לדייק את הטיפול. הרגשתי את האנרגיות בגוף בימים שלאחרי הטיפול. תודה לך על מגע קסום והרגשה קסומה עוד יותר!"
-              }
-              avatar={"R.D"}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Testimonial
-              name={"Noam Younger"}
-              testimonial={
-                "הגעתי לליאור בעקבות כאבים בכתף לסדרה של טיפולים והוא ממש ממש עזר לי! מטפל בחסד בעל ידי זהב! מומלץ בחום"
-              }
-              avatar={"N.Y"}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Testimonial
-              name={"omer ema"}
-              testimonial={`מגיעה לטיפולים אצל ליאור אחת לחודש למעלה משנתיים! אני מאמנת כושר וסובלת מפציעות ספורט. הטיפולים אצל ליאור מסייעים לי באיזון הגוף והנפש ומפיגים עומסים ולחצים. ממליצה מכל הלב, סומכת על ליאור בעיניים עצומות ונהנית מכל רגע!`}
-              avatar={"O.E"}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Testimonial
-              name={"tedy raviv"}
-              testimonial={
-                "הייתי צריך טיפול דחוף בגלל צוואר תפוס, הסכים לקבל אותי באותו יום ועזר לי מאוד."
-              }
-              avatar={"T.R"}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Testimonial
-              name={"limor haviv"}
-              testimonial={
-                "מטפל מדהים. באתי בעקבות כאבי גב והוא ממש עזר לי. מומלץ בחום"
-              }
-              avatar={"L.H"}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Testimonial
-              name={"Rafa"}
-              testimonial={`באתי לליאור לאחר פציעה. הוא היה מאוד מקצועי בדק אותי ותשאל.
- עזר לי עם הפציעה לאחר סשן טיפולים.
-                מאוד מומלץ ומקצועי.`}
-              avatar={"R"}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Testimonial
-              name={"Connie Naymark"}
-              testimonial={
-                "ליאור היה מקסים ומקצועי, סופר אכפתי וער לצרכי המטופל. ממש נהניתי!!♥️"
-              }
-              avatar={"C.N"}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Testimonial
-              name={"איתי רייכנטל"}
-              testimonial={
-                "כבר שנים שאני הולך למעסים וליאור הוא פשוט מדהים, משחרר מתחים, תפיסות של אחרי אימון ונותן חוויה יחודית מומלץ בחום!"
-              }
-              avatar={"א.ר"}
-            />
-          </SwiperSlide>
-        </Swiper>}
+            {res.testimonials.map((item, index) => {
+              const currentLanguageIndex = language ? 1 : 0;
+              const name = Array.isArray(item.name)
+                ? item.name[currentLanguageIndex] ?? item.name[0]
+                : item.name;
+              const testimonial = Array.isArray(item.testimonial)
+                ? item.testimonial[currentLanguageIndex] ?? item.testimonial[0]
+                : item.testimonial;
+
+              return (
+                <SwiperSlide key={`${name}-${index}`}>
+                  <Testimonial
+                    name={name}
+                    testimonial={testimonial}
+                    avatar={item.avatar}
+                  />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        )}
       </Grid>
     </Container>
   );
