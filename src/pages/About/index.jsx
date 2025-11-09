@@ -7,7 +7,7 @@ import Card from '../../components/Card'
 import AnimatedReveal from '../../components/AnimatedReveal'
 
 const res = {
-    header:[": סוגי טיפולים שאני מציע","type of tretment i offer:"],
+    header:[" סוגי טיפולים שאני מציע:","type of tretment i offer:"],
     title:["כיצד מתבצע הטיפול?","How is the treatment carried out?"],
     body:[`הטיפול יתחיל בשיחה קצרה כדי להבין טוב יותר במה להתמקד.
      לפי העקרונות הסינים והמערביים, של אורח והרגלי חיים 
