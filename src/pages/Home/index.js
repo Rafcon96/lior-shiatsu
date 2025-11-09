@@ -32,8 +32,8 @@ const res = {
     {buttonTitle:[`על הטיפול`,`About Treatment`],path:'/about'},
     {buttonTitle:[`מחירון`,`Pricing`],path:'/prices'},
   ],
-  title: ['ברוכים הבאים', 'Welcome'],
-  subtitle: ['טיפול הוליסטי משולב', 'Holistic Integrated Treatment']
+  title: ['ליאור שחר', 'LIOR SHAHR'],
+  subtitle:  ['ליאור שחר', 'Lior Shahar'],
 }
 
 const HeroSection = styled(Box)(({ theme }) => ({
@@ -197,9 +197,10 @@ function Home() {
               
               <TitleTypography
                 variant="h3"
-                align="center"
+                align={language ? 'left' : 'right'}
                 sx={{
                   fontSize: { xs: '2rem', md: '2.5rem' },
+                  textAlign: language ? 'left' : 'right',
                 }}
               >
                 {res.title[Number(language)]}
@@ -207,14 +208,17 @@ function Home() {
 
               <SubtitleTypography
                 variant="h5"
-                align="center"
+                align={language ? 'left' : 'right'}
+                sx={{
+                  textAlign: language ? 'left' : 'right',
+                }}
               >
                 {res.subtitle[Number(language)]}
               </SubtitleTypography>
 
               <Typography
                 variant="body1"
-                align="center"
+                align={language ? 'left' : 'right'}
                 sx={{
                   whiteSpace: "pre-line",
                   wordSpacing: "0.2rem",
@@ -222,12 +226,13 @@ function Home() {
                   color: 'var(--text-muted)',
                   fontSize: { xs: '0.95rem', md: '1.1rem' },
                   mb: 4,
+                  textAlign: language ? 'left' : 'right',
                 }}
               >
                 {res.body[Number(language)]}
               </Typography>
 
-              <Grid container spacing={2} justifyContent="center">
+              <Grid container spacing={2} justifyContent={language ? 'flex-start' : 'flex-end'}>
                 {res.actionButtons.map((btn, index) => (
                   <Grid item key={index}>
                     <StyledButton 

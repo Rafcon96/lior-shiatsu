@@ -19,38 +19,34 @@ export default function TitleBodyImg({res , height = 250}) {
             </Grid>
         </Grid>
         <Grid item container xs={12} md={6} sx={{order: { xs: 1, md: res.imgLeft ? 2 : 1 } }} alignContent={"start"}>
-            <Grid item container justifyContent={"center"}>
+            <Grid item container justifyContent={language ? 'flex-start' : 'flex-end'}>
                 <Typography
                     variant="h4"
-                    align={'center'}
-                    alignContent={'center'}
+                    align={language ? 'left' : 'right'}
                     sx={{
                     m: 1,
-                    display:  'flex' ,
-                    // fontFamily: 'Amatic SC',
                     fontWeight: 700,
                     letterSpacing: '.2rem',
                     color: 'inherit',
                     textDecoration: 'none',
-                    fontSize:'clamp(1.2rem, 3vw, 3rem)'
+                    fontSize:'clamp(1.2rem, 3vw, 3rem)',
+                    textAlign: language ? 'left' : 'right'
                     }}
                 >
                     {res.title[Number(language)]}
                 </Typography>
             </Grid>
-            <Grid item container justifyContent={"center"}>
+            <Grid item container justifyContent={language ? 'flex-start' : 'flex-end'}>
                 <Typography
                     variant="h6"
-                    align={'center'}
+                    align={language ? 'left' : 'right'}
                     sx={{
                         whiteSpace:"pre-line",
                     mr: 1,
-                    display:  'flex' ,
-                    // fontFamily: 'Amatic SC',
-                    // fontWeight: 700,
                     fontSize:'clamp(1rem, 2.5vw, 1.5rem)',
                     color: 'inherit',
                     textDecoration: 'none',
+                    textAlign: language ? 'left' : 'right'
                     }}
                 >
                     {res.body[Number(language)]}

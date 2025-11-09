@@ -4,7 +4,7 @@ import { useLang } from "../../context/language.context";
 // import Testimonial from "../../components/Testimonial";
 
 const res = {
-  title: ["מחירון לשעת טיפול", "Price For Hour Of Treatment"],
+  title: ["מחירון טיפולים", "Price For Treatments"],
   subtitle: [
     "בחרו את הטיפול המתאים לכם וקבלו חוויית ריפוי מלאה.",
     "Choose the session that fits you and enjoy a full healing experience.",
@@ -12,26 +12,26 @@ const res = {
 };
 const itemRes = [
   {
-    title: ["שיאצו ודיקור / שיאצו", "Shiatsu"],
+    title: ["עיסוי", "Massage"],
     description: [
-      "טיפול בשיאצו ודיקור",
-      "Gentle acupressure along meridians to release tension and restore flow.",
+      "טיפול המשלב טכניקות שונות של עיסוי שוודי, רקמות עמוקות, שיאצו ועוד.\nכ-70 דקות טיפול.",
+      "A session blending Swedish, deep-tissue, shiatsu, and additional massage techniques.\nApprox. 70 minutes.",
     ],
     price: 300,
   },
   {
-    title: ["עיסוי / עיסוי משולב", "Massage / Combo Massage"],
+    title: ["עיסוי משולב", "Combo Massage"],
     description: [
-      "טיפול משולב בעיסוי עמוק ומגע מרגיע להרפיית השרירים.",
-      "Blended deep tissue and relaxing touch for muscular relief.",
+      "טיפול המשלב טכניקות שונות של עיסוי שוודי, רקמות עמוקות, שיאצו ועוד.\nכ-85 דקות טיפול.",
+      "An extended session blending Swedish, deep-tissue, shiatsu, and other therapeutic modalities.\nApprox. 85 minutes.",
     ],
     price: 350,
   },
   {
     title: ["טיפול עד הבית", "Home Treatment"],
     description: [
-      "מטפל מגיע עד אליכם עם כל הציוד לחוויית טיפול פרטית.",
-      "Therapist arrives fully equipped for a private in-home experience.",
+      "מטפל מגיע עד אליכם עם כל הציוד לחוויית טיפול פרטית.\nכ-70 דקות טיפול.",
+      "Therapist arrives fully equipped for a private in-home experience.\nApprox. 70 minutes.",
     ],
     price: 400,
   },

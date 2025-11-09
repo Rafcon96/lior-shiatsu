@@ -4,61 +4,61 @@ import { useLang } from '../../context/language.context'
 
 export default function HeaderBody({res}) {
   const {language} = useLang()
+  const alignment = language ? 'left' : 'right'
+  const justify = language ? 'flex-start' : 'flex-end'
+
   return (
-    <Grid container direction={"column"}  style={{border:"2px solid green"}} >
-        <Grid item container justifyContent={"center"}>
-                <Typography
-                    variant="h4"
-                    align={'center'}
-                    alignContent={'center'}
-                    sx={{
-                    m: 2,
-                    display:  'flex' ,
-                    // fontFamily: 'Amatic SC',
-                    fontWeight: 700,
-                    letterSpacing: '.2rem',
-                    color: 'inherit',
-                    textDecoration: 'none',
-                    }}
-                >
-                   {res.title[Number(language)]}
-                </Typography>
-          </Grid>
-          <Grid item container justifyContent={"center"}>
-            <Typography
-                // variant="h6"
-                // align={language ? 'right' : 'left'}
-                sx={{
-                  whiteSpace:"pre-line",
-                mx: 2,
-                display:  'flex' ,
-                // fontFamily: 'Amatic SC',
-                fontWeight: 700,
-                
-                color: 'inherit',
-                textDecoration: 'none',
-                }}
-            >
-                {res.body[Number(language)]}
-            </Typography>
-          </Grid>
-          <Grid item container justifyContent={"center"} sx={{marginTop:2}}>
-            <Typography
-                // variant="h6"
-                // align={'right'}
-                sx={{
-                mx: 2,
-                display:  'flex' ,
-                // fontFamily: 'Amatic SC',
-                fontWeight: 500,
-                
-                color: 'inherit',
-                textDecoration: 'none',
-                }}
-            >
-                {res.body2[Number(language)]}
-            </Typography>
-          </Grid>
+    <Grid
+      container
+      direction="column"
+      alignItems={{ xs: 'stretch', md: justify }}
+      sx={{
+        textAlign: alignment,
+        gap: 2,
+      }}
+    >
+      <Grid item>
+        <Typography
+          variant="h4"
+          align={alignment}
+          sx={{
+            mx: { xs: 1, md: 0 },
+            fontWeight: 700,
+            letterSpacing: '.2rem',
+            color: 'inherit',
+            textDecoration: 'none',
+          }}
+        >
+          {res.title[Number(language)]}
+        </Typography>
+      </Grid>
+      <Grid item>
+        <Typography
+          sx={{
+            whiteSpace: 'pre-line',
+            mx: { xs: 1, md: 0 },
+            fontWeight: 700,
+            color: 'inherit',
+            textDecoration: 'none',
+          }}
+          align={alignment}
+        >
+          {res.body[Number(language)]}
+        </Typography>
+      </Grid>
+      <Grid item sx={{ mt: 1 }}>
+        <Typography
+          sx={{
+            mx: { xs: 1, md: 0 },
+            fontWeight: 500,
+            color: 'inherit',
+            textDecoration: 'none',
+          }}
+          align={alignment}
+        >
+          {res.body2[Number(language)]}
+        </Typography>
+      </Grid>
     </Grid>
   )
 }
