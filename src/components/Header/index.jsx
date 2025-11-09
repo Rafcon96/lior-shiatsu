@@ -14,7 +14,7 @@ import { useLang } from '../../context/language.context';
 import { Link, useLocation } from 'react-router-dom';
 
 const pages = [
-  {name:['בית','Home'], Link:"/"},
+  {name:['בית','Home'], link:"/"},
   {name:["על הטיפול","About"], link:"/about"},
   {name:['מחירון',"Prices"], link:"/prices"},
     {name:["ביקורות מטופלים","Testimonials"],link:"/testimonial"},
