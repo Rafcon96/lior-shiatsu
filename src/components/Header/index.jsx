@@ -8,7 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuItem from '@mui/material/MenuItem';
 import { styled } from '@mui/material/styles';
-
+import Container from '@mui/material/Container';
 import LanguageBtn from '../LanguageBtn'
 import { useLang } from '../../context/language.context';
 import { Link, useLocation } from 'react-router-dom';
@@ -102,11 +102,13 @@ function ResponsiveAppBar() {
 
   return (
     <StyledAppBar position="sticky" sx={{ width: "100%" }}>
+
+      <Container maxWidth="xl">
       <Toolbar sx={{ 
         minHeight: { xs: 70, md: 90 },
         px: { xs: 2, md: 4 },
         justifyContent: 'space-between',
-        width: '100%',
+        width: '100%',  
       }}>
         <LogoContainer>
           <img 
@@ -195,10 +197,11 @@ function ResponsiveAppBar() {
           ))}
         </Box>
 
-        <Box sx={{ width: 120, display: 'flex', justifyContent: 'flex-end' }}>
+        <Box sx={{ width: 120, display: 'flex', justifyContent: 'center'  ,alignItems:'center',paddingX:{xs:0,md:2}}}>
           <LanguageBtn />
         </Box>
       </Toolbar>
+      </Container>
     </StyledAppBar>
   );
 }
