@@ -14,10 +14,13 @@ import { useLang } from '../../context/language.context';
 import { Link, useLocation } from 'react-router-dom';
 
 const pages = [
+  {name:['בית','Home'], Link:"/"},
+  {name:["על הטיפול","About"], link:"/about"},
+  {name:['מחירון',"Prices"], link:"/prices"},
     {name:["ביקורות מטופלים","Testimonials"],link:"/testimonial"},
-    {name:['מחירון',"Prices"], link:"/prices"},
-    {name:["על הטיפול","About"], link:"/about"},
-    {name:['בית','Home'], Link:"/"},
+   
+   
+    
 ]
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
