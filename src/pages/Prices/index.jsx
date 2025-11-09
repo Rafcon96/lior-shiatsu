@@ -14,7 +14,7 @@ const itemRes = [
   {
     title: ["שיאצו ודיקור / שיאצו", "Shiatsu"],
     description: [
-      "איזון אנרגטי דרך לחץ עדין על מרידיאנים לשחרור מתחים.",
+      "טיפול בשיאצו ודיקור",
       "Gentle acupressure along meridians to release tension and restore flow.",
     ],
     price: 300,
