@@ -126,11 +126,11 @@ export default function About() {
         <WaveDivider position="top" color="#e0f2fe" opacity={0.5} />
         <WaveDivider position="bottom" color="#e0f2fe" opacity={0.35} />
         <AnimatedReveal>
-          <Grid container dir={language ? 'ltr' : 'rtl'} justifyContent={language ? 'flex-start' : 'flex-end'}>
+          <Grid container dir={language ? 'ltr' : 'rtl'} justifyContent={'center'}>
             <Grid
               item
               container
-              justifyContent={language ? 'flex-start' : 'flex-end'}
+              justifyContent={'center'}
               sx={{
                 backgroundColor: 'rgba(255,255,255,0.75)',
                 borderRadius: 6,
@@ -163,7 +163,7 @@ export default function About() {
             <WaveDivider position="top" color={palette.waveColor} opacity={0.35} />
             <WaveDivider position="bottom" color={palette.waveColor} opacity={0.25} />
             <AnimatedReveal delay={index * 100}>
-              <Grid container dir={language ? 'ltr' : 'rtl'} justifyContent={language ? 'flex-start' : 'flex-end'}>
+              <Grid container dir={language ? 'ltr' : 'rtl'} justifyContent={'center'}>
                 <Grid
                   item
                   xs={12}
@@ -195,10 +195,10 @@ export default function About() {
         <WaveDivider position="top" color="#c7d2fe" opacity={0.4} />
         <WaveDivider position="bottom" color="#c7d2fe" opacity={0.3} />
         <AnimatedReveal>
-          <Grid container dir={language ? 'ltr' : 'rtl'} justifyContent={language ? 'flex-start' : 'flex-end'} sx={{ mb: { xs: 4, md: 6 } }}>
+          <Grid container dir={language ? 'ltr' : 'rtl'} justifyContent={'center'} sx={{ mb: { xs: 4, md: 6 },mt:{xs:1,md:6} }}>
             <Typography
               variant="h4"
-              align={language ? 'left' : 'right'}
+              align={'center'}
               sx={{
                 display: 'flex',
                 fontFamily: 'Amatic SC',
@@ -220,8 +220,8 @@ export default function About() {
         </AnimatedReveal>
 
         <AnimatedReveal delay={120}>
-          <Grid container dir={language ? 'ltr' : 'rtl'} justifyContent={language ? 'flex-start' : 'flex-end'} spacing={4}>
-            <Grid container item lg={4} xs={12} justifyContent={language ? 'flex-start' : 'flex-end'}>
+          <Grid container dir={language ? 'ltr' : 'rtl'} justifyContent={'center'} spacing={4}>
+            <Grid container item lg={4} xs={12} justifyContent={'center'}>
               <Card
                 imgPath={'/lior1.png'}
                 title={['שיאצו', 'Shiatsu'][Number(language)]}
@@ -233,7 +233,7 @@ export default function About() {
                 ][Number(language)]}
               />
             </Grid>
-            <Grid item lg={4} xs={12} container justifyContent={language ? 'flex-start' : 'flex-end'}>
+            <Grid item lg={4} xs={12} container justifyContent={'center'}>
               <Card
                 imgPath={'/dickor1.jpg'}
                 title={['דיקור', 'Acupuncture'][Number(language)]}
@@ -247,7 +247,7 @@ Hypotheses include reflex stimulation of the nervous system, endorphin release, 
                 ][Number(language)]}
               />
             </Grid>
-            <Grid item lg={4} xs={12} container justifyContent={language ? 'flex-start' : 'flex-end'}>
+            <Grid item lg={4} xs={12} container justifyContent={'center'}>
               <Card
                 imgPath={'/car2.jpg'}
                 title={['כוסות רוח', 'Cupping therapy'][Number(language)]}

@@ -5,13 +5,13 @@ import { useLang } from '../../context/language.context'
 export default function HeaderBody({res}) {
   const {language} = useLang()
   const alignment = language ? 'left' : 'right'
-  const justify = language ? 'flex-start' : 'flex-end'
+  // const justify = language ? 'flex-start' : 'flex-end'
 
   return (
     <Grid
       container
       direction="column"
-      alignItems={{ xs: 'stretch', md: justify }}
+      // alignItems={{ xs: 'stretch', md: justify }}
       sx={{
         textAlign: alignment,
         gap: 2,
@@ -30,6 +30,7 @@ export default function HeaderBody({res}) {
           }}
         >
           {res.title[Number(language)]}
+          
         </Typography>
       </Grid>
       <Grid item>

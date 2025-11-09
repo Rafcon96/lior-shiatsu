@@ -13,7 +13,7 @@ import "./styles.css";
 import { Pagination, Autoplay } from "swiper/modules";
 import Testimonial from "../../components/Testimonial";
 import Container from "@mui/material/Container";
-import { Typography, useMediaQuery, Grid } from "@mui/material";
+import { Typography, useMediaQuery, Grid, Box } from "@mui/material";
 import { useLang } from "../../context/language.context";
 import Cube from "../../components/Cube";
 
@@ -100,11 +100,18 @@ export default function TestimonialSwiper() {
   const { language } = useLang();
   return (
     <Container
-      maxWidth="lg"
-      sx={{ minHeight: "calc(100vh - 250px)" }}
+      maxWidth={false}
+      sx={{
+        minHeight: "calc(100vh - 250px)",
+        width: "100vw",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        px: { xs: 2, sm: 3, md: 6 },
+      }}
       dir={language ? "ltr" : "rtl"}
     >
-     
+      <Box sx={{ width: "100%", maxWidth: 1200, mx: "auto" }}>
       <Typography
         variant="h2"
         align={"center"}
@@ -149,7 +156,11 @@ export default function TestimonialSwiper() {
       </Typography> */}
       <Grid
         container
-        sx={{ maxWidth: isMobileView ? 350 : "100%", margin: "0 auto" }}
+        justifyContent="center"
+        sx={{
+          maxWidth: isMobileView ? 350 : "100%",
+          mx: "auto",
+        }}
       >
         {isMobileView ? (
           <Cube language={language} res={res} />
@@ -199,6 +210,7 @@ export default function TestimonialSwiper() {
           </Swiper>
         )}
       </Grid>
+      </Box>
     </Container>
   );
 }

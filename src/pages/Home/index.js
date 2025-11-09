@@ -183,7 +183,16 @@ function Home() {
 
   return (
     <HeroSection>
-      <Container maxWidth="lg">
+      <Container
+        maxWidth={false}
+        sx={{
+          width: '100vw',
+          display: 'flex',
+          justifyContent: 'center',
+          px: { xs: 3, sm: 4, md: 6 },
+        }}
+      >
+        <Box sx={{ width: '100%', maxWidth: '1200px' }}>
         <Grid container spacing={4} alignItems="center" sx={{ minHeight: { xs: 'auto', md: 'calc(100vh - 200px)' } }}>
           {/* Left Column - Content */}
           <Grid item xs={12} md={6} order={{ xs: 2, md: language ? 1 : 1 }}>
@@ -257,6 +266,7 @@ function Home() {
             </ImageContainer>
           </Grid>
         </Grid>
+        </Box>
       </Container>
     </HeroSection>
   );

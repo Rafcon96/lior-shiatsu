@@ -30,7 +30,7 @@ const itemRes = [
   {
     title: ["טיפול עד הבית", "Home Treatment"],
     description: [
-      "מטפל מגיע עד אליכם עם כל הציוד לחוויית טיפול פרטית.\nכ-70 דקות טיפול.",
+      "מטפל מגיע עד אליכם עם כל הציוד לחוויית טיפול פרטית.\nכ-75 דקות טיפול.",
       "Therapist arrives fully equipped for a private in-home experience.\nApprox. 70 minutes.",
     ],
     price: 400,
