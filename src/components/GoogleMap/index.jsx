@@ -14,23 +14,48 @@ const LocationPin = ({ text }) => (
   </div>
 )
 
-const GoogleMap = ({ location, zoomLevel }) => (
-  <div className="map">
-    <h2 className="map-h2">Come Visit Us At Our Campus</h2>
+const GoogleMap = ({
+  location,
+  zoomLevel,
+  heading = "Come Visit Us At Our Clinic",
+  locale = "he",
+}) => {
+  const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY
+  const hasApiKey = Boolean(apiKey)
 
-    <div className="google-map">
-      <GoogleMapReact
-        defaultCenter={location}
-        defaultZoom={zoomLevel}
-      >
-        <LocationPin
-          lat={location?.lat}
-          lng={location?.lng}
-          text={location?.address}
-        />
-      </GoogleMapReact>
+  return (
+    <div className="map">
+      {heading ? (
+        <h2 className="map-h2">{heading}</h2>
+      ) : null}
+
+      <div className="google-map">
+        {hasApiKey ? (
+          <GoogleMapReact
+            defaultCenter={location}
+            defaultZoom={zoomLevel}
+            bootstrapURLKeys={{ key: apiKey, language: locale }}
+            yesIWantToUseGoogleMapApiInternals
+          >
+            <LocationPin
+              lat={location?.lat}
+              lng={location?.lng}
+              text={location?.address}
+            />
+          </GoogleMapReact>
+        ) : (
+          <div className="map-error">
+            <p>
+              כדי להציג את המפה יש להגדיר מפתח Google Maps (REACT_APP_GOOGLE_MAPS_API_KEY).
+            </p>
+            <p>
+              Please configure a valid Google Maps API key to display the map.
+            </p>
+          </div>
+        )}
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 export default GoogleMap

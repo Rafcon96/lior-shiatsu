@@ -1,4 +1,4 @@
-import { Box, Grid, Modal, Typography, IconButton } from '@mui/material'
+import { Box, Grid, Modal, Typography, IconButton, Button } from '@mui/material'
 import { styled } from '@mui/material/styles';
 import React from 'react'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -21,10 +21,10 @@ const style = {
     p: 4,
 };
 
-const location = {
-    address: 'מזרחי 27 תל אביב.',
-    lat: 32.058380,
-    lng: 34.769620,
+const baseLocation = {
+    address: ['מגן דוד 36, הרצליה', '36 Magen David St, Herzliya'],
+    lat: 32.166576,
+    lng: 34.831905,
 }
 
 const StyledFooter = styled(Box)(({ theme }) => ({
@@ -76,11 +76,20 @@ const ContactText = styled(Typography)(({ theme }) => ({
 export default function Footer() {
     const [open, setOpen] = React.useState(false);
     const handleClose = () => setOpen(false);
+    const handleOpen = () => setOpen(true);
     const isMobile = useMediaQuery('(max-width:1200px)')
     const { language } = useLang()
+    const localeIndex = Number(language);
     const res = {
         contact: ['ליצירת קשר 052-8356836', 'Contact: +972 52-835-6836'],
+        viewMap: ['מפת הגעה', 'View Map'],
+        mapTitle: ['מיקום הקליניקה', 'Clinic Location'],
     }
+    const localizedLocation = React.useMemo(() => ({
+        lat: baseLocation.lat,
+        lng: baseLocation.lng,
+        address: baseLocation.address[localeIndex],
+    }), [localeIndex]);
     
     return (
         <StyledFooter>
@@ -134,6 +143,27 @@ export default function Footer() {
                             </Grid>
                         </Grid>
                     </Grid>
+
+                    <Grid item>
+                        <Button
+                            variant="outlined"
+                            onClick={handleOpen}
+                            sx={{
+                                mt: 1,
+                                borderColor: 'rgba(255, 255, 255, 0.6)',
+                                color: 'white',
+                                px: 3,
+                                fontWeight: 600,
+                                letterSpacing: '0.08em',
+                                '&:hover': {
+                                    borderColor: 'white',
+                                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                                },
+                            }}
+                        >
+                            {res.viewMap[localeIndex]}
+                        </Button>
+                    </Grid>
                 </Grid>
             </Box>
             
@@ -144,7 +174,12 @@ export default function Footer() {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                    <GoogleMap location={location} zoomLevel={17} />
+                    <GoogleMap
+                        location={localizedLocation}
+                        zoomLevel={17}
+                        heading={res.mapTitle[localeIndex]}
+                        locale={language ? 'en' : 'he'}
+                    />
                 </Box>
             </Modal>
         </StyledFooter>
