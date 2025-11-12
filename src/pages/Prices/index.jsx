@@ -28,6 +28,14 @@ const itemRes = [
     price: 350,
   },
   {
+    title: ["טיפול שיאצו", "Shiatsu Treatment"],
+    description: [
+      "טיפול שיאצו הכולל מתיחות והנעות מפרקים.\nכ-60 דקות טיפול.",
+      "Shiatsu session focusing on stretches and joint mobilizations.\nApprox. 60 minutes.",
+    ],
+    price: 280,
+  },
+  {
     title: ["טיפול עד הבית", "Home Treatment"],
     description: [
       "מטפל מגיע עד אליכם עם כל הציוד לחוויית טיפול פרטית.\nכ-75 דקות טיפול.",
