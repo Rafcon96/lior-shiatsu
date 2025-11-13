@@ -1,7 +1,7 @@
 import { Button, Grid, Typography } from "@mui/material";
 import React from "react";
-import HeaderBody from "../../components/HeaderBody";
-import TitleBodyImg from "../../components/TitleBodyImg";
+// import HeaderBody from "../../components/HeaderBody";
+// import TitleBodyImg from "../../components/TitleBodyImg";
 import { useLang } from "../../context/language.context";
 
 const res = [

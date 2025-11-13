@@ -3,6 +3,7 @@ import { Button, Grid, Typography, Box, Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { useLang } from "../../context/language.context";
 import { useNavigate } from "react-router-dom";
+import ContactMailIcon from '@mui/icons-material/ContactMail';
 
 const res = {
   body:[`מטפל מוסמך בשיאצו, עיסוי שוודי ורקמות עמוקות,
@@ -32,6 +33,11 @@ const res = {
     {buttonTitle:[`על הטיפול`,`About Treatment`],path:'/about'},
     {buttonTitle:[`מחירון`,`Pricing`],path:'/prices'},
   ],
+  cta: {
+    title: ['מוכנים להתחיל את המסע לריפוי?', 'Ready to Begin Your Healing Journey?'],
+    subtitle: ['בואו נשוחח ונתאים לכם את הטיפול המושלם', 'Let\'s talk and find the perfect treatment for you'],
+    button: ['צרו קשר עכשיו', 'Contact Us Now'],
+  },
   title: ['ליאור שחר', 'LIOR SHAHR'],
   subtitle:  ['ליאור שחר', 'Lior Shahar'],
 }
@@ -151,6 +157,64 @@ const StyledButton = styled(Button)(({ theme }) => ({
   },
 }));
 
+const CTASection = styled(Box)(({ theme }) => ({
+  background: 'linear-gradient(135deg, rgba(139, 166, 139, 0.1) 0%, rgba(106, 142, 107, 0.15) 100%)',
+  borderRadius: '24px',
+  padding: theme.spacing(4, 3),
+  marginTop: theme.spacing(6),
+  textAlign: 'center',
+  border: '2px solid rgba(139, 166, 139, 0.2)',
+  boxShadow: '0 8px 32px rgba(31, 64, 38, 0.1)',
+  transition: 'all 0.3s ease',
+  '&:hover': {
+    transform: 'translateY(-4px)',
+    boxShadow: '0 12px 40px rgba(31, 64, 38, 0.15)',
+    borderColor: 'rgba(139, 166, 139, 0.3)',
+  },
+  [theme.breakpoints.down('md')]: {
+    padding: theme.spacing(3, 2),
+    borderRadius: '16px',
+    marginTop: theme.spacing(4),
+  },
+}));
+
+const CTATitle = styled(Typography)(({ theme }) => ({
+  fontFamily: "'Amatic SC', cursive",
+  fontWeight: 700,
+  color: '#2f5232',
+  marginBottom: theme.spacing(1),
+  fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
+}));
+
+const CTASubtitle = styled(Typography)(({ theme }) => ({
+  color: '#4a5b47',
+  marginBottom: theme.spacing(3),
+  fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+  fontWeight: 400,
+}));
+
+const CTAButton = styled(Button)(({ theme }) => ({
+  background: 'linear-gradient(135deg, #8BA68B 0%, #6B8E6B 100%)',
+  color: 'white',
+  padding: theme.spacing(1.5, 5),
+  borderRadius: '9999px',
+  fontSize: 'clamp(1rem, 2vw, 1.1rem)',
+  fontWeight: 600,
+  textTransform: 'none',
+  boxShadow: '0 6px 20px rgba(139, 166, 139, 0.3)',
+  transition: 'all 0.3s ease',
+  gap: theme.spacing(1),
+  '&:hover': {
+    background: 'linear-gradient(135deg, #6B8E6B 0%, #5A7A5A 100%)',
+    transform: 'translateY(-3px)',
+    boxShadow: '0 8px 24px rgba(139, 166, 139, 0.4)',
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(1.2, 4),
+    fontSize: '0.95rem',
+  },
+}));
+
 const TitleTypography = styled(Typography)(({ theme }) => ({
   background: 'linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%)',
   WebkitBackgroundClip: 'text',
@@ -266,6 +330,27 @@ function Home() {
             </ImageContainer>
           </Grid>
         </Grid>
+
+        {/* Call to Action Section */}
+        <CTASection>
+          <CTATitle>
+            {res.cta.title[Number(language)]}
+          </CTATitle>
+          <CTASubtitle>
+            {res.cta.subtitle[Number(language)]}
+          </CTASubtitle>
+          <CTAButton
+            variant="contained"
+            size="large"
+            startIcon={<ContactMailIcon />}
+            onClick={() => onBtnClick('/contact')}
+            sx={{
+              mx: 'auto',
+            }}
+          >
+            {res.cta.button[Number(language)]}
+          </CTAButton>
+        </CTASection>
         </Box>
       </Container>
     </HeroSection>
