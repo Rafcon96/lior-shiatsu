@@ -12,6 +12,14 @@ const res = {
 };
 const itemRes = [
   {
+    title: ["שיאצו / שיאצו ודיקור", "Shiatsu / Shiatsu and Acupuncture"],
+    description: [
+      "  טיפול שיאצו הכולל מתיחות והנעות מפרקים, עם אופציה לדיקור.\nכ-60 דקות טיפול.",
+      "Shiatsu session focusing on stretches and joint mobilizations.\nAcupuncture is optional.\nApprox. 60 minutes.",
+    ],
+    price: 280,
+  },
+  {
     title: ["עיסוי", "Massage"],
     description: [
       "טיפול המשלב טכניקות שונות של עיסוי שוודי, רקמות עמוקות, שיאצו ועוד.\nכ-70 דקות טיפול.",
@@ -27,14 +35,7 @@ const itemRes = [
     ],
     price: 350,
   },
-  {
-    title: ["טיפול שיאצו", "Shiatsu Treatment"],
-    description: [
-      "טיפול שיאצו הכולל מתיחות והנעות מפרקים.\nכ-60 דקות טיפול.",
-      "Shiatsu session focusing on stretches and joint mobilizations.\nApprox. 60 minutes.",
-    ],
-    price: 280,
-  },
+ 
   {
     title: ["טיפול עד הבית", "Home Treatment"],
     description: [
@@ -118,7 +119,7 @@ export default function Prices() {
               item.description[localeIndex]
             );
             return (
-              <Grid key={index} item xs={12} sm={6} md={4}>
+              <Grid key={index} item xs={12} sm={6}>
                 <Paper
                   elevation={8}
                   sx={{

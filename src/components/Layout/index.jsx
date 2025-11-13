@@ -20,7 +20,7 @@ export default function Layout({children}) {
       display: 'flex',
       flexDirection: 'column',
       minHeight: '100vh',
-      backgroundColor: '#FAF8F5',
+      maxWidth: '100%',
     }} dir={language ? 'ltr' : 'rtl'}>
       <Header />
       <Box

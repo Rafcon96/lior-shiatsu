@@ -8,19 +8,16 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuItem from '@mui/material/MenuItem';
 import { styled } from '@mui/material/styles';
-import Container from '@mui/material/Container';
 import LanguageBtn from '../LanguageBtn'
 import { useLang } from '../../context/language.context';
 import { Link, useLocation } from 'react-router-dom';
 
 const pages = [
-  {name:['בית','Home'], link:"/"},
-  {name:["על הטיפול","About"], link:"/about"},
-  {name:['מחירון',"Prices"], link:"/prices"},
-    {name:["ביקורות מטופלים","Testimonials"],link:"/testimonial"},
-   
-   
-    
+  { name: ['בית', 'Home'], link: '/' },
+  { name: ['על הטיפול', 'About'], link: '/about' },
+  { name: ['מחירון', 'Prices'], link: '/prices' },
+  { name: ['ביקורות מטופלים', 'Testimonials'], link: '/testimonial' },
+  { name: ['צור קשר', 'Contact'], link: '/contact' },
 ]
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
@@ -102,106 +99,149 @@ function ResponsiveAppBar() {
 
   return (
     <StyledAppBar position="sticky" sx={{ width: "100%" }}>
-
-      <Container maxWidth="xl">
-      <Toolbar sx={{ 
-        minHeight: { xs: 70, md: 90 },
-        px: { xs: 2, md: 4 },
-        justifyContent: 'space-between',
-        width: '100%',  
-      }}>
-        <LogoContainer>
-          <img 
-            src={`${process.env.PUBLIC_URL}/liorLogo2.png`} 
-            alt="liorLogo" 
-          />
-        </LogoContainer>
-
-        {/* Mobile Menu */}
-        <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end' }} dir={language ? 'ltr' : 'rtl'}>
-          <IconButton
-            size="large"
-            aria-label="menu"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            onClick={handleOpenNavMenu}
-            sx={{ 
-              color: '#5A7A5A',
-              '&:hover': { backgroundColor: 'rgba(139, 166, 139, 0.1)' }
+      <Toolbar
+        sx={{
+          minHeight: { xs: 70, md: 90 },
+          px: { xs: 2, md: 4 },
+          width: '100%',
+          display: 'flex',
+        }}
+      >
+        {/* Container with 3 equal sections */}
+        <Box
+          sx={{
+            width: '100%',
+            display: 'flex',
+            justifyContent: { xs: 'space-between', md: 'space-between' },
+            alignItems: 'center',
+            gap: { xs: 2, md: 0 },
+          }}
+        >
+          {/* Section 1: Mobile Menu Icon (Left for English, Right for Hebrew) */}
+          <Box
+            sx={{
+              flex: { xs: '1 1 33.333%', md: '0 0 auto' },
+              display: 'flex',
+              justifyContent: language ? 'flex-start' : 'flex-end',
+              alignItems: 'center',
             }}
           >
-            {anchorElNav ? <CloseIcon /> : <MenuIcon />}
-          </IconButton>
-          <Menu
-            anchorEl={anchorElNav}
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: language ? 'right' : 'left',
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: language ? 'right' : 'left',
-            }}
-            open={Boolean(anchorElNav)}
-            onClose={handleCloseNavMenu}
-            sx={{
-              display: { xs: 'block', md: 'none' },
-              '& .MuiPaper-root': {
-                borderRadius: '12px',
-               
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
-                border: '1px solid rgba(139, 166, 139, 0.1)',
-                mt: 1,
-              },
-            }}
-          >   
-            {pages.map((page, index) => (
-              <MenuItem 
-                key={index} 
-                onClick={handleCloseNavMenu}
-                sx={{
+            {/* Mobile Menu */}
+            <Box
+              sx={{
+                display: { xs: 'flex', md: 'none' },
+                flex: '1 1 33.333%',
+                alignItems: 'center',
+                justifyContent: 'flex-start',
+              }}
+            >
+              <IconButton
+                size="large"
+                aria-label="menu"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleOpenNavMenu}
+                sx={{ 
+                  color: '#5A7A5A',
                   '&:hover': { backgroundColor: 'rgba(139, 166, 139, 0.1)' }
                 }}
               >
+                {anchorElNav ? <CloseIcon /> : <MenuIcon />}
+              </IconButton>
+              <Menu
+                anchorEl={anchorElNav}
+                anchorOrigin={{
+                  vertical: 'bottom',
+                  horizontal: language ? 'right' : 'left',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: language ? 'right' : 'left',
+                }}
+                open={Boolean(anchorElNav)}
+                onClose={handleCloseNavMenu}
+                sx={{
+                  display: { xs: 'block', md: 'none' },
+                  '& .MuiPaper-root': {
+                    borderRadius: '12px',
+                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
+                    border: '1px solid rgba(139, 166, 139, 0.1)',
+                    mt: 1,
+                  },
+                }}
+              >   
+                {pages.map((page, index) => (
+                  <MenuItem 
+                    key={index} 
+                    onClick={handleCloseNavMenu}
+                    sx={{
+                      '&:hover': { backgroundColor: 'rgba(139, 166, 139, 0.1)' }
+                    }}
+                  >
+                    <StyledLink 
+                      to={page.link} 
+                      active={isActive(page.link) ? 1 : 0}
+                      style={{ width: '100%', textAlign: 'center' }}
+                    >
+                      {page.name[Number(language)]}
+                    </StyledLink>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
+            {/* Desktop Menu */}
+            <Box 
+              sx={{ 
+                display: { xs: 'none', md: 'flex' },
+                justifyContent: language ? "space-between" : "space-between",
+                gap: 1,
+                flexWrap: 'wrap',
+              }} 
+              dir={language ? 'ltr' : 'rtl'}
+            >
+              {pages.map((page, index) => (
                 <StyledLink 
-                  to={page.link} 
+                  key={index} 
+                  to={page.link}
                   active={isActive(page.link) ? 1 : 0}
-                  style={{ width: '100%', textAlign: 'center' }}
                 >
                   {page.name[Number(language)]}
                 </StyledLink>
-              </MenuItem>
-            ))}
-          </Menu>
-        </Box>
-        
-        {/* Desktop Menu */}
-        <Box 
-          sx={{ 
-            flexGrow: 1, 
-            display: { xs: 'none', md: 'flex' },
-            justifyContent: 'center',
-            gap: 1,
-          }} 
-          dir={language ? 'ltr' : 'rtl'}
-        >
-          {pages.map((page, index) => (
-            <StyledLink 
-              key={index} 
-              to={page.link}
-              active={isActive(page.link) ? 1 : 0}
-            >
-              {page.name[Number(language)]}
-            </StyledLink>
-          ))}
-        </Box>
+              ))}
+            </Box>
+          </Box>
 
-        <Box sx={{ width: 120, display: 'flex', justifyContent: 'center'  ,alignItems:'center',paddingX:{xs:0,md:2}}}>
-          <LanguageBtn />
+          {/* Section 2: Logo (Center) */}
+          <Box
+            sx={{
+              flex: { xs: '1 1 33.333%', md: '0 0 auto' },
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <LogoContainer>
+              <img 
+                src={`${process.env.PUBLIC_URL}/liorLogo2.png`} 
+                alt="liorLogo" 
+              />
+            </LogoContainer>
+          </Box>
+
+          {/* Section 3: Language Button (Right for English, Left for Hebrew) */}
+          <Box
+            sx={{
+              flex: { xs: '1 1 33.333%', md: '0 0 auto' },
+              display: 'flex',
+              justifyContent:  'flex-end',
+              alignItems: 'center',
+            }}
+          >
+            <LanguageBtn />
+          </Box>
         </Box>
       </Toolbar>
-      </Container>
     </StyledAppBar>
   );
 }
