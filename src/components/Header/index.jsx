@@ -114,6 +114,8 @@ function ResponsiveAppBar() {
             display: 'flex',
             justifyContent: { xs: 'space-between', md: 'space-between' },
             alignItems: 'center',
+            paddingRight: language ? 5 : 0,
+            paddingLeft: language ? 0 : 5,
             gap: { xs: 2, md: 0 },
           }}
         >

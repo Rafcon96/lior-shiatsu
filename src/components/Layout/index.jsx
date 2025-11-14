@@ -33,7 +33,7 @@ export default function Layout({children}) {
           justifyContent: 'center',
         }}
       >
-        <Box sx={{ width: '100%', maxWidth: '2100px', px: { xs: 0, sm: 3, md: 4 }, mx: 'auto' }}>
+          <Box sx={{ width: '100%', maxWidth: '100%', px: { xs: 0, sm: 3, md: 4 }, mx: 'auto' }}>
           {children}
         </Box>
       </Box>
