@@ -32,7 +32,7 @@ Treatment is done in comfortable clothing; I use thumbs, elbows, and forearms to
 The pressure should feel accurate and pleasant; mild discomfort can occur but we avoid tightening pain.`,
     ],
     cta: {
-      title: ['מוכנים להתחיל את המסע לריפוי?', 'Ready to Begin Your Healing Journey?'],
+      title: ['מתלבט.ת?', 'Still Hesitating?'],
       subtitle: ['בואו נשוחח ונתאים לכם את הטיפול המושלם', 'Let\'s talk and find the perfect treatment for you'],
       button: ['צרו קשר עכשיו', 'Contact Us Now'],
     },
@@ -151,7 +151,7 @@ const StyledContentBox = styled(Box)(({ theme }) => ({
 }))
 
 const StyledTypography = styled(Typography)(({ theme }) => ({
-  fontFamily: "'Amatic SC', cursive",
+  fontFamily:   "'Playfair Display', serif",
   fontWeight: 400,
   fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)',
   lineHeight: 1.8,
