@@ -103,10 +103,8 @@ export default function Cube({ language, res }) {
       : defaultTestimonials;
   const langIndex = language ? 1 : 0;
 
-  const cubeHeight = langIndex === 1 ? 420 : 360;
-
   return (
-    <Grid container sx={{ height: langIndex === 1 ? 484 : 444 }}>
+    <Grid container sx={{ height: 200,marginBottom: 32 }}>
       <Swiper
         key={langIndex}
         effect={"cube"}
@@ -129,12 +127,12 @@ export default function Cube({ language, res }) {
         className="mySwiper"
         style={{
           maxWidth: 280,
-          height: cubeHeight,
+          height: 310,
           position: "absolute",
           left: "50%",
           top: "50%",
           marginLeft: -140,
-          marginTop: -(cubeHeight / 2),
+          marginTop: -180,
         }}
       >
         {items.map((item, index) => {

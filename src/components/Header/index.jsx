@@ -26,6 +26,9 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
   boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
   borderBottom: '1px solid rgba(139, 166, 139, 0.1)',
   transition: 'all 0.3s ease',
+  position: 'sticky',
+  top: 0,
+  zIndex: 1100,
   [theme.breakpoints.down('md')]: {
     height: 70,
   },

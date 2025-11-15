@@ -17,10 +17,10 @@ export default function Layout({children}) {
 
   return (
     <Box sx={{ 
-      display: 'flex',
       flexDirection: 'column',
       minHeight: '100vh',
       maxWidth: '100%',
+      position: 'relative',
     }} dir={language ? 'ltr' : 'rtl'}>
       <Header />
       <Box
@@ -31,6 +31,7 @@ export default function Layout({children}) {
           overflowX: 'hidden',
           display: 'flex',
           justifyContent: 'center',
+          position: 'relative',
         }}
       >
           <Box sx={{ width: '100%', maxWidth: '100%', px: { xs: 0, sm: 3, md: 4 }, mx: 'auto' }}>

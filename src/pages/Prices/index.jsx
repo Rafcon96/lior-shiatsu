@@ -119,16 +119,17 @@ export default function Prices() {
               item.description[localeIndex]
             );
             return (
-              <Grid key={index} item xs={12} sm={6}>
+              <Grid key={index}  item xs={12} sm={6} sx={{overflow:'hidden'}}>
                 <Paper
-                  elevation={8}
+                  elevation={2}
                   sx={{
-                    height: "100%",
+                    height: "80%",
                     p: { xs: 2.5, sm: 2.7, md: 3 },
                     borderRadius: 4,
                     position: "relative",
                     overflow: "hidden",
                     display: "flex",
+                    // mb: 5,
                     flexDirection: "column",
                     gap: 1.5,
                     background: "linear-gradient(165deg, #ffffff 0%, #f4f7f4 100%)",
@@ -169,7 +170,7 @@ export default function Prices() {
                       justifyContent: isEnglish ? "flex-start" : "flex-end",
                       alignItems: "center",
                       gap: 1,
-                      mt: 1,
+                      pb: 5,
                     }}
                   >
                     <Typography

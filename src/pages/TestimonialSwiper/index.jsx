@@ -291,7 +291,7 @@ export default function TestimonialSwiper() {
           justifyContent: 'center',
           alignItems: 'center',
           width: '100%',
-          mt: { xs: 4, md: 6 },
+          mt: { xs: 20, lg: 6 },
         }}
       >
         <CTASection>
