@@ -84,6 +84,12 @@ export default function MediaCard({ imgPath, title, body, linkPath }) {
         <Button
           component={RouterLink}
           to={linkPath}
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth',
+            });
+          }}
           variant="contained"
           color="primary"
           size="medium"
