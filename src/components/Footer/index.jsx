@@ -11,22 +11,23 @@ import { useLang } from '../../context/language.context';
 
 
 const StyledFooter = styled(Box)(({ theme }) => ({
-  background: 'linear-gradient(135deg, #8BA68B 0%, #6B8E6B 100%)',
-  color: 'white',
-  padding: theme.spacing(4, 0),
-  marginTop: theme.spacing(8),
-  boxShadow: '0 -4px 20px rgba(0, 0, 0, 0.1)',
-  position: 'relative',
-  '&::before': {
-    content: '""',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    height: '1px',
-    background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent)',
-  },
-}));
+    background: 'linear-gradient(135deg, #8BA68B 0%, #6B8E6B 100%)',
+    color: 'white',
+    padding: theme.spacing(4, 0),
+    marginTop: theme.spacing(8),
+    boxShadow: '0 -4px 20px rgba(0, 0, 0, 0.1)',
+    position: 'relative',
+    width: '100%',
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      height: '1px',
+      background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent)',
+    },
+  }));
 
 const StyledIconButton = styled(IconButton)(({ theme }) => ({
   color: 'white',
@@ -67,8 +68,8 @@ export default function Footer() {
     
     return (
         <StyledFooter>
-            <Box sx={{ width: '100%', px: { xs: 2, sm: 3, md: 4 } }}>
-                <Grid container direction="column" alignItems="center" spacing={3} dir={language ? 'ltr' : 'rtl'}>
+            <Box sx={{ width: '100%' }}>
+                <Grid container direction="column" alignItems="center"   dir={language ? 'ltr' : 'rtl'}>
                     <Grid item>
                         <ContactText>
                             {res.contact[Number(language)]}

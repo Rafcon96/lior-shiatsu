@@ -4,8 +4,8 @@ import React from 'react'
 import { useLang } from '../../context/language.context'
 
 const res = [
-    {img:'/english.png',title:"EN"},
-    {img:'/hebrow.png',title:"עב"}
+
+    {img:'/hebrow.png',title:"עב"},    {img:'/english.png',title:"EN"},
 ]
 
 const StyledButton = styled(Button)(({ theme }) => ({
@@ -23,7 +23,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
     transform: 'translateY(-1px)',
   },
   '& .MuiButton-startIcon': {
-    marginRight: theme.spacing(0.5),
+    // marginRight: theme.spacing(0.5),
     marginLeft: 0,
   },
 }));
