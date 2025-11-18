@@ -6,32 +6,32 @@ import { useLang } from "../../context/language.context";
 const res = {
   title: ["מחירון טיפולים", "Price For Treatments"],
   subtitle: [
-    "בחרו את הטיפול המתאים לכם וקבלו חוויית ריפוי מלאה.",
-    "Choose the session that fits you and enjoy a full healing experience.",
+    "בחרו את הטיפול המתאים לכם וקבלו חוויית ריפוי מלאה",
+    "Choose the session that fits you and enjoy a full healing experience",
   ],
 };
 const itemRes = [
   {
     title: ["שיאצו / שיאצו ודיקור", "Shiatsu / Shiatsu and Acupuncture"],
     description: [
-      "  טיפול שיאצו הכולל מתיחות והנעות מפרקים, עם אופציה לדיקור.\nכ-60 דקות טיפול.",
-      "Shiatsu session focusing on stretches and joint mobilizations.\nAcupuncture is optional.\nApprox. 60 minutes.",
+      "  טיפול שיאצו הכולל מתיחות והנעות מפרקים, עם אופציה לדיקור.\nכ-60 דקות טיפול",
+      "Shiatsu session focusing on stretches and joint mobilizations.\nAcupuncture is optional.\nApprox. 60 minutes",
     ],
     price: 280,
   },
   {
     title: ["עיסוי", "Massage"],
     description: [
-      "טיפול המשלב טכניקות שונות של עיסוי שוודי, רקמות עמוקות, שיאצו ועוד.\nכ-70 דקות טיפול.",
-      "A session blending Swedish, deep-tissue, shiatsu, and additional massage techniques.\nApprox. 70 minutes.",
+      "טיפול המשלב טכניקות שונות של עיסוי שוודי, רקמות עמוקות, שיאצו ועוד.\nכ-70 דקות טיפול",
+      "A session blending Swedish, deep-tissue, shiatsu, and additional massage techniques.\nApprox. 70 minutes",
     ],
     price: 300,
   },
   {
     title: ["עיסוי משולב", "Combo Massage"],
     description: [
-      "טיפול המשלב טכניקות שונות של עיסוי שוודי, רקמות עמוקות, שיאצו ועוד.\nכ-85 דקות טיפול.",
-      "An extended session blending Swedish, deep-tissue, shiatsu, and other therapeutic modalities.\nApprox. 85 minutes.",
+      "טיפול המשלב טכניקות שונות של עיסוי שוודי, רקמות עמוקות, שיאצו ועוד.\nכ-85 דקות טיפול",
+      "An extended session blending Swedish, deep-tissue, shiatsu, and other therapeutic modalities.\nApprox. 85 minutes",
     ],
     price: 350,
   },
@@ -39,8 +39,8 @@ const itemRes = [
   {
     title: ["טיפול עד הבית", "Home Treatment"],
     description: [
-      "מטפל מגיע עד אליכם עם כל הציוד לחוויית טיפול פרטית.\nכ-75 דקות טיפול.",
-      "Therapist arrives fully equipped for a private in-home experience.\nApprox. 70 minutes.",
+      "מטפל מגיע עד אליכם עם כל הציוד לחוויית טיפול פרטית.\nכ-75 דקות טיפול",
+      "Therapist arrives fully equipped for a private in-home experience.\nApprox. 75 minutes",
     ],
     price: 400,
   },
@@ -99,19 +99,7 @@ export default function Prices() {
             {capitalizeLine(res.title[localeIndex])}
           </Typography>
         </Grid>
-        <Grid item xs={12} sx={{ px: { xs: 0.5, sm: 1 } }}>
-          <Typography
-            align={"center"}
-            sx={{
-              color: "#4a5b47",
-              fontSize: "clamp(0.95rem, 2vw, 1.2rem)",
-              fontWeight: 500,
-              letterSpacing: isEnglish ? "0.02em" : 0,
-            }}
-          >
-            {capitalizeLine(res.subtitle[localeIndex])}
-          </Typography>
-        </Grid>
+
         <Grid item container spacing={{ xs: 2, sm: 2.5, md: 3 }}>
           {itemRes.map((item, index) => {
             const localizedTitle = capitalizeLine(item.title[localeIndex]);

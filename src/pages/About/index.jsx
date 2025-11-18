@@ -25,7 +25,7 @@ const res = {
     To better understand what to focus on in treatment,
     The diagnosis is made by questioning according to the Chinese and Western principles,
     of length and habits of life,
-    Like, like how much water do you drink? how is the sleep and so'
+    like how much water do you drink? how is the sleep and so on
     And if there is an emotional reason behind this`
 ],
     body2:[` ברמה האורתופדית – נתבונן על מנחי הגוף במצב סטטי ובתנועה במרחב כדי לאתר מגבלות תנועה ולבחון אילו שרירים מקוצרים ומכווצים ואילו רפויים יותר. 
@@ -34,7 +34,7 @@ const res = {
     (כמו לחדר כושר או לשיעור פילטיס או יוגה .. נו אתם מבינים את הרעיון :)
     העיסוי מתבצע עם שמנים איכותיים, שמן שקדים, חמאת דקל וניחוחות שמנים ארומטיים ועוד.
    `,
-    ` and at the orthopedic level - guides the body in a static and movement perspective in space,
+    ` At the orthopedic level - guides the body in a static and movement perspective in space,
     Which muscles are shortened and contracted and which are more relaxed.
     And after we talked we can start
     Shiatsu is fully clothed and comfortable, so it is important to come with comfortable clothes,

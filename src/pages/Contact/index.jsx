@@ -18,17 +18,16 @@ const content = {
   whatsappLabel: ['ווטסאפ', 'WhatsApp'],
   locationLabel: ['מיקום', 'Location'],
   openInMaps: ['פתח ב-Google Maps', 'Open in Google Maps'],
-  openInWaze: ['פתח ב-Waze', 'Open in Waze'],
 };
 
 const cards = [
   {
-    icon: <EmailIcon />,
-    href: 'mailto:lior0007@gmail.com',
-    color: '#8BA68B',
-    labelKey: 'emailLabel',
-    value: 'lior0007@gmail.com',
-    external: false,
+    icon: <WhatsAppIcon />,
+    href: 'https://api.whatsapp.com/send?phone=972528356836',
+    color: '#25D366',
+    labelKey: 'whatsappLabel',
+    value: '052-8356836',
+    external: true,
   },
   {
     icon: <PhoneIcon />,
@@ -37,14 +36,6 @@ const cards = [
     labelKey: 'phoneLabel',
     value: '052-8356836',
     external: false,
-  },
-  {
-    icon: <WhatsAppIcon />,
-    href: 'https://api.whatsapp.com/send?phone=972528356836',
-    color: '#25D366',
-    labelKey: 'whatsappLabel',
-    value: '052-8356836',
-    external: true,
   },
 ];
 
@@ -190,6 +181,9 @@ export default function Contact() {
                     }}
                   >
                     <IconButton
+                      href="https://maps.app.goo.gl/aWKT6pwAnnw4jZ4q7"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       sx={{
                         backgroundColor: '#8BA68B',
                         color: 'white',
@@ -210,43 +204,77 @@ export default function Contact() {
                       sx={{
                         color: '#4a5b47',
                         fontWeight: 500,
-                        mb: 1,
+                        mb: 0.5,
                       }}
                     >
                       {content.locationLabel[localeIndex]}
                     </Typography>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
-                      <Link
-                        href="https://maps.app.goo.gl/aWKT6pwAnnw4jZ4q7"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        sx={{
-                          color: '#8BA68B',
-                          textDecoration: 'none',
-                          fontSize: '0.85rem',
-                          '&:hover': {
-                            textDecoration: 'underline',
-                          },
-                        }}
-                      >
-                        {content.openInMaps[localeIndex]}
-                      </Link>
-                      <Link
-                        href="https://waze.com/ul?ll=32.18602961761304,34.839428807508774&navigate=yes"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        sx={{
-                          color: '#8BA68B',
-                          textDecoration: 'none',
-                          fontSize: '0.85rem',
-                          '&:hover': {
-                            textDecoration: 'underline',
-                          },
-                        }}
-                      >
-                        {content.openInWaze[localeIndex]}
-                      </Link>
-                    </Box>
+                    <Link
+                      href="https://maps.app.goo.gl/aWKT6pwAnnw4jZ4q7"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      sx={{
+                        color: '#8BA68B',
+                        textDecoration: 'none',
+                        '&:hover': {
+                          textDecoration: 'underline',
+                        },
+                      }}
+                    >
+                      {content.openInMaps[localeIndex]}
+                    </Link>
+                  </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={6} md={3}>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      textAlign: 'center',
+                    }}
+                  >
+                    <IconButton
+                      href="mailto:lior0007@gmail.com"
+                      sx={{
+                        backgroundColor: '#8BA68B',
+                        color: 'white',
+                        width: 60,
+                        height: 60,
+                        mb: 1.5,
+                        '&:hover': {
+                          backgroundColor: '#8BA68B',
+                          transform: 'translateY(-3px)',
+                          filter: 'brightness(0.9)',
+                        },
+                        transition: 'all 0.3s ease',
+                      }}
+                    >
+                      <EmailIcon />
+                    </IconButton>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: '#4a5b47',
+                        fontWeight: 500,
+                        mb: 0.5,
+                      }}
+                    >
+                      {content.emailLabel[localeIndex]}
+                    </Typography>
+                    <Link
+                      href="mailto:lior0007@gmail.com"
+                      sx={{
+                        color: '#8BA68B',
+                        textDecoration: 'none',
+                        '&:hover': {
+                          textDecoration: 'underline',
+                        },
+                      }}
+                    >
+                      lior0007@gmail.com
+                    </Link>
                   </Box>
                 </Grid>
               </Grid>
