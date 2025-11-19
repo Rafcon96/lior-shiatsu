@@ -10,11 +10,10 @@ const res = {
     title: ['דיקור', 'Acupuncture'],
     imgAlt: ['דיקור img', 'Acupuncture image'],
     intro: [
-        `למה אנחנו דוקרים,  ואיך זה עובד ?
+        `למה אנחנו דוקרים, ואיך זה עובד ?
 ישנן המון השערות ומחקרים רבים שנעשו ונעשים כל הזמן, אך התעלומה טרם נפתרה.
-ההסבר המדעי כיום מציע שהמחט גורמת לגירוי רפלקסים של מערכת העצבים
-ולשחרור אנדורפינים ויוצרת זרימת דם טובה יותר באזור הנדקר. מה שמפחית את מדדי הדלקת
-ואת הפעילות החשמלית הספונטנית.`,
+ההסבר המדעי כיום מציע שהמחט גורמת לגירוי רפלקסים של מערכת העצבים ולשחרור אנדורפינים ויוצרת זרימת דם טובה יותר באזור הנדקר. מה שמפחית את מדדי הדלקת ואת הפעילות החשמלית הספונטנית.`,
+
         `Why do we needle, and how does it work?
 There are many hypotheses and ongoing studies, yet the mystery is not fully solved.
 The current scientific view suggests the needle stimulates nervous system reflexes,
@@ -38,7 +37,7 @@ Source: 2022 Department of Medicine, Faculty of Health Sciences, McMaster Univer
     linkText: ['לינק למאמר המלא', 'Link to the full article'],
     qna: [
         `האם זה כואב?
-לעיתים הדקירה איננה מורגשת כלל ולעיתים יכולה לכאוב מאוד.
+בחלק מהטיפולים מורגשת דקירה קטנה וחולפת, ובמקרים רבים הדיקור אינו מורגש כלל.
 מה עובי המחט?
 המחט דקה מאוד, המחטים בעובי שונה בהתאם לאזור הנדקר. הדקות בעובי 0.15 מ"מ והעבות כ-0.4 מ"מ.
 לפי התיאוריה הסינית, הצ'י היא אנרגיית החיים. האנרגיה זורמת בערוצים קבועים לאורך הגוף הנקראים מרידיאנים.
@@ -243,7 +242,7 @@ export default function Acupuncture({height = 350}) {
                 <StyledTitle align={'center'}>
                   {res.title[localeIndex]}
                 </StyledTitle>
-                <StyledTypography align={'center'}>
+                <StyledTypography align={language ? 'left' : 'right'}>
                   {res.intro[localeIndex]}
                 </StyledTypography>
               </StyledContentBox>

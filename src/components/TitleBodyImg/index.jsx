@@ -12,14 +12,14 @@ export default function TitleBodyImg({res , height = 250}) {
             }
 
   return (
-    <Grid container spacing={2}> 
+    <Grid container  > 
         <Grid item xs={12} md={6} sx={styles} >
             <Grid item container justifyContent={'center'} >
                 {res?.imgPath ? <img src={process.env.PUBLIC_URL + res.imgPath} alt={res.title[Number(language)]} style={{height,width:"80%",borderRadius:res?.borderRadius}} /> : null}
             </Grid>
         </Grid>
-        <Grid item container xs={12} md={6} sx={{order: { xs: 1, md: res.imgLeft ? 2 : 1 } }} alignContent={"start"}>
-            <Grid item container justifyContent={language ? 'flex-start' : 'flex-end'}>
+        <Grid item container xs={12} md={6} sx={{order: { xs: 1, md: res.imgLeft ? 2 : 1 } }} alignContent={"start"} px={{xs:0, md:3}}>
+            <Grid item container >
                 <Typography
                     variant="h4"
                     align={language ? 'left' : 'right'}

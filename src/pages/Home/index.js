@@ -7,7 +7,7 @@ import ContactMailIcon from '@mui/icons-material/ContactMail';
 
 const res = {
   body:[`מטפל מוסמך בשיאצו, עיסוי שוודי ורקמות עמוקות,
-  דיקור אורתופדי וסיני משולב .
+  דיקור אורתופדי וסיני משולב 
   מטעם "קמפוס ברושים" באוניברסיטת תל אביב ומטעם "בית הספר למקצועות הטיפול" 
  בעברי הייתי מהנדס כימיה במחלקת הנדסה בחברת התרופות "טבע", וב-"חברת החשמל"
   במקביל סבלתי מכאבים פיזיים וכך נחשפתי לעולם התרפיה והתנועה.
@@ -115,26 +115,26 @@ const ImageContainer = styled(Box)(({ theme }) => ({
   },
 }));
 
-const LogoContainer = styled(Box)(({ theme }) => ({
-  display: 'flex',
-  justifyContent: 'center',
-  marginBottom: theme.spacing(3),
-  '& img': {
-    width: '150px',
-    height: '150px',
-    borderRadius: '50%',
-    boxShadow: '0 8px 24px var(--shadow)',
-    border: '4px solid rgba(255, 255, 255, 0.9)',
-    transition: 'transform 0.3s ease',
-    '&:hover': {
-      transform: 'scale(1.05) rotate(5deg)',
-    },
-    [theme.breakpoints.down('md')]: {
-      width: '120px',
-      height: '120px',
-    },
-  },
-}));
+// const LogoContainer = styled(Box)(({ theme }) => ({
+//   display: 'flex',
+//   justifyContent: 'center',
+//   marginBottom: theme.spacing(3),
+//   '& img': {
+//     width: '150px',
+//     height: '150px',
+//     borderRadius: '50%',
+//     boxShadow: '0 8px 24px var(--shadow)',
+//     border: '4px solid rgba(255, 255, 255, 0.9)',
+//     transition: 'transform 0.3s ease',
+//     '&:hover': {
+//       transform: 'scale(1.05) rotate(5deg)',
+//     },
+//     [theme.breakpoints.down('md')]: {
+//       width: '120px',
+//       height: '120px',
+//     },
+//   },
+// }));
 
 const StyledButton = styled(Button)(({ theme }) => ({
   background: 'var(--primary)',
@@ -261,12 +261,12 @@ function Home() {
           {/* Left Column - Content */}
           <Grid item xs={12} md={6} order={{ xs: 2, md: language ? 1 : 1 }}>
             <ContentCard>
-              <LogoContainer>
+              {/* <LogoContainer>
                 <img 
                   src={`${process.env.PUBLIC_URL}/liorLogo2.png`} 
                   alt={language ? 'Lior logo' : 'ליאור לוגו'} 
                 />
-              </LogoContainer>
+              </LogoContainer> */}
               
               <TitleTypography
                 variant="h3"

@@ -30,9 +30,9 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
   // position: 'sticky',
   top: 0,
   zIndex: 1100,
-  [theme.breakpoints.down('md')]: {
-    height: 70,
-  },
+  // [theme.breakpoints.down('md')]: {
+  //   height: 70,
+  // },
 }));
 
 const StyledLink = styled(Link, {
@@ -66,20 +66,20 @@ const StyledLink = styled(Link, {
   }),
 }));
 
-const LogoContainer = styled(Box)({
-  display: 'flex',
-  alignItems: 'center',
-  '& img': {
-    maxWidth: 70,
-    height: 'auto',
-    borderRadius: '50%',
-    transition: 'transform 0.3s ease',
-    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-    '&:hover': {
-      transform: 'scale(1.05)',
-    },
-  },
-});
+// const LogoContainer = styled(Box)({
+//   display: 'flex',
+//   alignItems: 'center',
+//   '& img': {
+//     maxWidth: 70,
+//     height: 'auto',
+//     borderRadius: '50%',
+//     transition: 'transform 0.3s ease',
+//     boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+//     '&:hover': {
+//       transform: 'scale(1.05)',
+//     },
+//   },
+// });
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -173,12 +173,13 @@ function ResponsiveAppBar() {
       alignItems: 'center',
       justifyContent: 'center',
     }}
-  >  <LogoContainer>
+  > 
+   {/* <LogoContainer>
     <img 
       src={`${process.env.PUBLIC_URL}/liorLogo2.png`} 
       alt="liorLogo" 
     />
-  </LogoContainer>
+  </LogoContainer> */}
   </Box>
   <Box
     sx={{
@@ -189,7 +190,7 @@ function ResponsiveAppBar() {
     }}
   > <LanguageBtn /></Box>
   </Grid>
-      <Grid container justifyContent="space-between" px={2} sx={{ display: { xs: 'none', md: 'flex' },}}>  
+      <Grid container justifyContent="space-between" p={2} sx={{ display: { xs: 'none', md: 'flex' },}}>  
        
   <Box
     sx={{
@@ -198,12 +199,13 @@ function ResponsiveAppBar() {
       alignItems: 'center',
       justifyContent: 'center',
     }}
-  >  <LogoContainer>
+  >  
+  {/* <LogoContainer>
     <img 
       src={`${process.env.PUBLIC_URL}/liorLogo2.png`} 
       alt="liorLogo" 
     />
-  </LogoContainer>
+  </LogoContainer> */}
   </Box>
   <Box
     sx={{

@@ -58,8 +58,8 @@ const content = [
            The treatment can alleviate and solve many acute problems`
        ]
        },
-       {title: ["טיפול יכול להביא להקלה משמעותית ואף לריפוי מלא במצבים הבאים:",
-           "The treatment can bring significant relief and even complete healing in the following situations"
+       {title: ["טיפול יכול להביא להקלה משמעותית ואף לריפוי במצבים הבאים:",
+           "The treatment can bring significant relief and healing in the following situations"
            ],
         body:[`כאבי צוואר וגב, בעיות כתפיים ,עייפות, מגרנות, כאבי מפרקים, פגיעות וטראומות לאחר תאונה ולשפר טווחי תנועה.
         הטיפול יכול לתמוך, להקל ולרווח סימפטומים של כאבים כרוניים ומצבים רגשים כמו : C-PTSD,   מגרנות, 
