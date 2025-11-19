@@ -212,7 +212,7 @@ export default function CuppingTherapy({height = 350}) {
                 <StyledTitle align={'center'}>
                   {res.title[localeIndex]}
                 </StyledTitle>
-                <StyledTypography align={'center'}>
+                <StyledTypography >
                   {res.intro[localeIndex]}
                 </StyledTypography>
               </StyledContentBox>
@@ -263,7 +263,7 @@ export default function CuppingTherapy({height = 350}) {
           <Grid container dir={language ? 'ltr' : 'rtl'} justifyContent={'center'}>
             <Grid item xs={12} md={10}>
               <StyledContentBox sx={{ p: { xs: 3, md: 5 } }}>
-                <StyledTypography align={'center'}>
+                <StyledTypography >
                   {res.howItWorks[localeIndex]}
                 </StyledTypography>
               </StyledContentBox>
@@ -288,7 +288,7 @@ export default function CuppingTherapy({height = 350}) {
           <Grid container dir={language ? 'ltr' : 'rtl'} justifyContent={'center'}>
             <Grid item xs={12} md={10}>
               <StyledContentBox sx={{ p: { xs: 3, md: 5 } }}>
-                <StyledTypography align={'center'}>
+                <StyledTypography >
                   {res.history[localeIndex]}
                 </StyledTypography>
               </StyledContentBox>

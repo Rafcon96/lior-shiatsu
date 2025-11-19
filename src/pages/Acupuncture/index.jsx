@@ -292,7 +292,7 @@ export default function Acupuncture({height = 350}) {
           <Grid container dir={language ? 'ltr' : 'rtl'} justifyContent={'center'}>
             <Grid item xs={12} md={10}>
               <StyledContentBox sx={{ p: { xs: 3, md: 5 } }}>
-                <StyledTypography align={'center'}>
+                <StyledTypography >
                   {res.evidence[localeIndex]}
                 </StyledTypography>
                 <Box sx={{ textAlign: 'center', mt: 2 }}>
@@ -322,7 +322,7 @@ export default function Acupuncture({height = 350}) {
           <Grid container dir={language ? 'ltr' : 'rtl'} justifyContent={'center'}>
             <Grid item xs={12} md={10}>
               <StyledContentBox sx={{ p: { xs: 3, md: 5 } }}>
-                <StyledTypography align={'center'}>
+                <StyledTypography >
                   {res.qna[localeIndex]}
                 </StyledTypography>
               </StyledContentBox>

@@ -204,7 +204,7 @@ export default function Shiatsu({height = 400}) {
                 <StyledTitle align={'center'}>
                   {res.title[localeIndex]}
                 </StyledTitle>
-                <StyledTypography align={'center'}>
+                <StyledTypography >
                   {res.intro1[localeIndex]}
                 </StyledTypography>
               </StyledContentBox>
@@ -254,7 +254,7 @@ export default function Shiatsu({height = 400}) {
           <Grid container dir={language ? 'ltr' : 'rtl'} justifyContent={'center'}>
             <Grid item xs={12} md={10}>
               <StyledContentBox sx={{ p: { xs: 3, md: 5 } }}>
-                <StyledTypography align={'center'}>
+                <StyledTypography >
                   {res.intro2[localeIndex]}
                 </StyledTypography>
               </StyledContentBox>
@@ -279,7 +279,7 @@ export default function Shiatsu({height = 400}) {
           <Grid container dir={language ? 'ltr' : 'rtl'} justifyContent={'center'}>
             <Grid item xs={12} md={10}>
               <StyledContentBox sx={{ p: { xs: 3, md: 5 } }}>
-                <StyledTypography align={'center'}>
+                <StyledTypography >
                   {res.howItWorks[localeIndex]}
                 </StyledTypography>
               </StyledContentBox>
